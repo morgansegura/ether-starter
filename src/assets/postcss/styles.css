@@ -9,15 +9,15 @@
 @import 'base/variables';
 @import 'base/utilities';
 @import 'base/baseline';
+@import 'base/typography';
+@import 'base/containers';
+@import 'base/buttons';
+@import 'base/forms';
 
 /* BEM Design Modules */
-@import 'base/typography';
-@import 'base/buttons';
-@import 'base/container';
-@import 'base/section';
-@import 'base/theme';
 @import 'modules/header';
 @import 'modules/footer';
 @import 'modules/navigation';
-@import 'modules/menu';
+@import 'base/section';
 @import 'modules/contact-form';
+@import 'base/theme'; /* Keep this last-ish */

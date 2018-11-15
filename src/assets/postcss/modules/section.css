@@ -1,0 +1,25 @@
+.section {
+
+    &-hero {
+        background-color: $main-black;
+        color: $main-white;
+    }
+    &-about {
+
+    }
+    &-contact {
+
+    }
+    /* ... */
+}
+
+.section-hero {
+
+}
+.section-about {
+
+}
+.section-contact {
+
+}
+/* ... */

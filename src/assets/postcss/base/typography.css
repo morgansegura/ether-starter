@@ -20,10 +20,10 @@
         }     
     }    
 }
+
 .sans {
     font-family: $sans-primary;
 }
-
 .serif {
     font-family: $serif-primary;
 }

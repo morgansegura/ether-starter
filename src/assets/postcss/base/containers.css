@@ -1,0 +1,124 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+  margin: 0 auto;
+  padding-right: $pad;
+  padding-left: $pad;
+
+  @mixin atSmallest {
+    max-width: $atSmall;
+  }  
+  @mixin atSmall{
+    max-width: $atMedium;
+  }
+
+  @mixin atMedium {
+    max-width: $atLarge;
+  }
+
+  @mixin atLarge {
+    max-width: $atLargest;
+  }
+
+  &--sm {  
+    max-width: 500px;
+  }
+
+  &--md {  
+      max-width: 800px;
+  }
+
+  &--lg {
+      max-width: 1000px;
+  }
+
+}
+
+.content {
+    padding-top: $pad;
+    padding-bottom: $pad;
+
+    &--sm {
+        padding-top: $pad-sm;
+        padding-bottom: $pad-sm;
+    }
+    &--md {
+        padding-top: $pad-md;
+        padding-bottom: $pad-md;        
+    }
+    &--lg {
+        padding-top: $pad-lg;
+        padding-bottom: $pad-lg;        
+    }
+    &--xl {
+        padding-top: $pad-xl;
+        padding-bottom: $pad-xl;        
+    }
+}
+
+/* Margin adjustments */
+.p {
+  @for $p from 0 to 90 by 5 {
+    &t-$(p) {
+      padding-top: $(p)px;      
+    }
+    &b-$(p) {
+      padding-bottom: $(p)px;      
+    }
+    &l-$(p) {
+      padding-left: $(p)px;      
+    }
+    &r-$(p) {
+      padding-right: $(p)px;      
+    }
+    &x-$(p) {
+      padding-left: $(p)px;
+      padding-right: $(p)px;
+    }
+    &y-$(p) {
+      padding-top: $(p)px;
+      padding-bottom: $(p)px;
+    }
+  }
+}
+/* Margin adjustments */
+.m {
+  @for $m from 0 to 90 by 5 {
+    &t-$(m) {
+      margin-top: $(m)px;      
+    }
+    &b-$(m) {
+      margin-bottom: $(m)px;      
+    }
+    &l-$(m) {
+      margin-left: $(m)px;      
+    }
+    &r-$(m) {
+      margin-right: $(m)px;      
+    }
+    &x-$(m) {
+      margin-left: $(m)px;
+      margin-right: $(m)px;
+    }
+    &y-$(m) {
+      margin-top: $(m)px;
+      margin-bottom: $(m)px;
+    }
+  }
+}
+
+/* Custom adjust Boostrap4 column gap */
+.gap {
+  @for $gap from 5 to 30 by 5 {
+    &-$(gap) {
+      margin-left: -$(gap)px;
+      margin-right: -$(gap)px;
+      & > [class^=col-] {
+        padding-left: $(gap)px;
+        padding-right: $(gap)px;
+      }
+    }
+  } 
+}
