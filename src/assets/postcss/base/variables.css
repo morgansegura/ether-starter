@@ -29,3 +29,12 @@ $pad-sm: 30px;
 $pad-md: 60px;
 $pad-lg: 90px;
 $pad-xl: 120px;
+
+/* Setup Baseline.css elements */
+$base-font-size: 1rem;
+$base-font-family: $sans-primary;
+$base-font-weight: 300;
+$base-font-height: 1.7;
+$base-font-color: $main-black;
+$base-bg-color: $main-white;
+$base-transition: all .3s ease-out;

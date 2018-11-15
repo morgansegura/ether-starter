@@ -1,0 +1,41 @@
+.t {
+    &-center {
+        text-align: center;
+    }
+    &-justify {
+        text-align: justify;
+    }
+    &-left {
+        text-align: left;
+    }
+    &-right {
+        text-align: right;
+    }
+}
+
+.b {
+    @for $b from 3 to 9 {
+        &$(b) {
+        font-weight: $(b)00;   
+        }     
+    }    
+}
+.sans {
+    font-family: $sans-primary;
+}
+
+.serif {
+    font-family: $serif-primary;
+}
+.cursive {
+    font-family: $cursive;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+.capitalize {
+    text-transform: capitalize;
+}
