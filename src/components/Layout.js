@@ -1,13 +1,15 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 // Components
-import Header from './Header'
-import Header from './Footer'
+import Header from './Header';
+import Footer from './Footer';
+// Media
+import '../assets/css/styles.css'
 
-const TemplateWrapper = ({ children, data }) => (
+const TemplateWrapper = ({ children }) => (
   <div className="wrapper">
     <Helmet 
-      title={`${data.site.siteMetadata.title} | Customize this site!`}
+      title={`Ether Starter`}
     />
     <Header />
     <main className="main">
@@ -17,14 +19,4 @@ const TemplateWrapper = ({ children, data }) => (
   </div>
 )
 
-export default TemplateWrapper
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+export default TemplateWrapper;
