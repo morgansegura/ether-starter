@@ -1,0 +1,31 @@
+/* Fonts */
+$sans-primary: 'Source Sans Pro', sans-serif;
+$sans-secondary: 'Fjalla One', sans-serif;
+$serif-primary: 'Arvo', serif;
+$cursive: 'Just Another Hand', cursive;
+
+/* Shades */
+$main-black: #20232a;
+$main-white: #ededed;
+$main-gray: #484848;
+$main-gray-light: #a9a9a9;
+
+/* Theme Colors */
+$cta: google-color(pink, a400);
+$cta-alt: red;
+
+/* Alt Colors */
+
+/* Dimensions */
+$atSmallest: 320px;
+$atSmall: 576px;
+$atMedium: 768px;
+$atLarge: 992px;
+$atLargest: 1200px;
+
+/* Padding, Margin defaults */
+$pad: 15px;
+$pad-sm: 30px;
+$pad-md: 60px;
+$pad-lg: 90px;
+$pad-xl: 120px;
