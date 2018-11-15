@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Ether Starter | ',
-    keywords: 'Gatsby.js, React.js, GraphQL, Netlify, NetlifyCMS, Gulp, PostCSS',
-    url: 'https://ether-strater.netlify.com',
+    title: 'Ether Starter',
+    keywords: 'Gatsby.js, React.js, GraphQL, Netlify, NetlifyCMS, Gulp, PostCSS'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
