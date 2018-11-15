@@ -1,5 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+// Components
+import Header from './Header'
+import Header from './Footer'
 
 const TemplateWrapper = ({ children, data }) => (
   <div className="wrapper">
