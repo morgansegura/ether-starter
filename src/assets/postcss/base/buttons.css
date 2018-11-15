@@ -1,0 +1,53 @@
+.btn {
+    position: relative;
+    z-index: 3;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: background-color .2s ease-out;
+    transition: $base-transition;
+    cursor: pointer;
+    display: inline-block;
+
+    &__outline {
+        background-color: transparent;
+        border: 2px solid black;
+
+        &:hover {
+            border: 2px solid color(black tint(10%));
+        }
+        &:visit {
+            border: 2px solid color(black tint(5%));
+        }
+    }    
+
+    /* Sizes */
+    &--sm {
+        padding: 5px 10px;
+    }
+    &--md {  
+        padding: 10px 15px;
+    }
+    &--lg {
+        padding: 20px 25px;
+    }
+    &__round {
+        border-radius: 50px;
+    }
+    &__sm-round {
+       border-radius: 3px;        
+    }
+    &__submit {
+        border-radius: 0;
+        padding: $pad $pad-sm;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:hover {
+            background-color: inherit;
+        }
+    }
+}
+.btn__block {
+    display: flex;
+    align-items: center;
+}

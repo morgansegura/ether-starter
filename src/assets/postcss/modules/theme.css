@@ -13,8 +13,9 @@ input::placeholder {
     }
 }
 
-.content > a {
+.content  a {
     color: color($cta shade(5%));
+    font-weight: 600;
 
     &:hover {
         color: $cta;

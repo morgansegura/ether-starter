@@ -3,12 +3,11 @@
     &__inner { 
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     &__item {
-        padding: 5px;
+        padding: 5px 10px;
     }   
-
 }
 
 .nav__main {
@@ -18,8 +17,5 @@
 
 }
 .nav__aside {
-
-}
-.nav__footer {    
 
 }

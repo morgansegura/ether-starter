@@ -1,6 +1,34 @@
-.footer {
-
+.footer {    
     &__inner {
-        
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &__item {
+        padding: 5px 10px;
+    }       
+    .copyright {
+        padding: 1rem;
+
+        .year {
+            font-weight: 400;
+        }
+        .company {
+            padding-left: 5px;
+            font-weight: 600
+        }
+    }
+}
+
+.footer__item {
+    
+    a {
+
+        &:hover {
+            
+        }
+        &:active {
+
+        }
     }
 }

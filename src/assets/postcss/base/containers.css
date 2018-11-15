@@ -39,22 +39,32 @@
 .content {
     padding-top: $pad;
     padding-bottom: $pad;
+    padding-left: $pad;
+    padding-right: $pad;
 
     &--sm {
+        padding-top: $pad-sm;
+        padding-bottom: $pad-sm;
         padding-top: $pad-sm;
         padding-bottom: $pad-sm;
     }
     &--md {
         padding-top: $pad-md;
         padding-bottom: $pad-md;        
+        padding-left: $pad-md;
+        padding-right: $pad-md;        
     }
     &--lg {
         padding-top: $pad-lg;
-        padding-bottom: $pad-lg;        
+        padding-bottom: $pad-lg;
+        padding-left: $pad-lg;        
+        padding-right: $pad-lg;        
     }
     &--xl {
         padding-top: $pad-xl;
-        padding-bottom: $pad-xl;        
+        padding-bottom: $pad-xl;
+        padding-left: $pad-xl;        
+        padding-right: $pad-xl;        
     }
 }
 
