@@ -18,6 +18,6 @@
 @import 'modules/header';
 @import 'modules/footer';
 @import 'modules/navigation';
-@import 'base/section';
+@import 'modules/section';
 @import 'modules/contact-form';
-@import 'base/theme'; /* Keep this last-ish */
+@import 'modules/theme'; /* Keep this last-ish */

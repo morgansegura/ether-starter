@@ -6,9 +6,12 @@ import Navigation from './Navigation';
 class Header extends Component {
     render() {
         return (
-            <header>
-                <p>The header belongs here.</p>
-                <Navigation />
+            <header className="header">
+                <div className="container">
+                    <div className="header__inner">
+                        <Navigation />
+                    </div>                
+                </div>
             </header>
         );
     }
