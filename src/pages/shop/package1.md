@@ -10,7 +10,7 @@ shirts:
     - alt: Alt 1
       image: /images/welk-winter-girl-with-reindeer.jpg
   main_image:
-    alt: Burning Fields
+    alt: Alt Main Image
     image: /images/welk-winter-santa-secret.jpg
   price: 100
   quantity: 100
