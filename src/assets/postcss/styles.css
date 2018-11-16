@@ -1,5 +1,5 @@
 /* Fonts */
-@import 'https://fonts.googleapis.com/css?family=Just+Another+Hand|Arvo|Fjalla+One|Source+Sans+Pro:300,400,600,700,900';
+@import 'https://fonts.googleapis.com/css?family=Norican|Arvo|Fjalla+One|Source+Sans+Pro:300,400,600,700,900';
 
 /* Vendors (3rd Party) */
 @import 'vendors/normalize';
@@ -19,5 +19,6 @@
 @import 'modules/footer';
 @import 'modules/navigation';
 @import 'modules/section';
-@import 'modules/contact-form';
+@import 'modules/blog';
+@import 'modules/forms';
 @import 'modules/theme'; /* Keep this last-ish */

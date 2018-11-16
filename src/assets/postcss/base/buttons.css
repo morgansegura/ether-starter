@@ -7,6 +7,7 @@
     transition: $base-transition;
     cursor: pointer;
     display: inline-block;
+    padding: 13px 30px;
 
     &__outline {
         background-color: transparent;
@@ -22,13 +23,16 @@
 
     /* Sizes */
     &--sm {
-        padding: 5px 10px;
+        font-size: 14px;
+        padding: 10px 20px;
     }
     &--md {  
-        padding: 10px 15px;
+        font-size: 18px;
+        padding: 15px 30px;
     }
     &--lg {
-        padding: 20px 25px;
+        font-size: 18px;
+        padding: 20px 40px;
     }
     &__round {
         border-radius: 50px;
@@ -36,18 +40,9 @@
     &__sm-round {
        border-radius: 3px;        
     }
-    &__submit {
-        border-radius: 0;
-        padding: $pad $pad-sm;
-        margin-left: auto;
-        margin-right: auto;
-
-        &:hover {
-            background-color: inherit;
-        }
-    }
 }
 .btn__block {
     display: flex;
+    width: 100%;
     align-items: center;
 }

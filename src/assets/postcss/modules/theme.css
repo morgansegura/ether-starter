@@ -1,19 +1,4 @@
-/* outline must be styled, ADA */
-input:focus,
-button:focus,
-select:focus {
-    background-color: color(google-color(yellow, a200) a(.3));
-}
-
-input::placeholder {
-    color: google-color(grey, 300);
-
-    &:focus {
-        color: google-color(grey, 100);
-    }
-}
-
-.content  a {
+.content a {
     color: color($cta shade(5%));
     font-weight: 600;
 

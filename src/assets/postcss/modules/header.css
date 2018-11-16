@@ -1,5 +1,6 @@
 .header {
-
+    background-color: white;
+    
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -7,19 +8,9 @@
     }
 
     .logo {
-        padding: 1rem;        
-    }
-}
-
-.header__item {
-    
-    a {
-
-        &:hover {
-            
-        }
-        &:active {
-
-        }
+        padding: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: google-color()
     }
 }

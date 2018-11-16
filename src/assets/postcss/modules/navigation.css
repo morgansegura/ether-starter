@@ -8,6 +8,17 @@
     &__item {
         padding: 5px 10px;
     }   
+    a {
+        /* color: color($cta shade(5%)); */
+        font-weight: 400;
+
+        &:hover {
+            /* color: $cta; */
+        }
+        &:active {
+            /* color: color($cta shade(8%)); */
+        }  
+    }  
 }
 
 .nav__main {

@@ -1,0 +1,79 @@
+
+/* outline must be styled, ADA */
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+    
+}
+/* Just the placeholder */
+input,
+textarea {
+    transition: $base-transition;
+    border: 1px solid google-color(grey, 300);
+    background-color: google-color(grey, 100);
+    padding: 15px;
+    border-radius: 3px;
+    margin-bottom: .25rem;
+
+    @mixin atMedium {
+        margin-bottom: 1rem;
+    }
+
+    &::placeholder {
+        font-size: 14px;
+        color: google-color(grey, 400);        
+    }
+    &:focus::placeholder {
+        color: google-color(grey, 300);
+    }
+    &:focus {
+        border-color: white;
+        background-color: google-color(grey, 50);
+        box-shadow: 0 1px 5px google-color(grey, 400);
+    }
+}
+/* Text style inputs & textarea */
+[type='text'],
+[type='email'],
+[type='phone'],
+[type='email'],
+textarea {
+    display: block;
+    width: calc(100% - 34px);
+}
+
+textarea {
+    min-height: 60px;
+    @mixin atMedium {
+        min-height: 100px;
+    }        
+}
+
+input::placeholder:focus,
+textarea::placeholder:focus {
+    color: google-color(grey, 100);
+}
+
+label {
+    margin-bottom: .5rem;
+}
+
+.btn__submit {
+    background-color: black;
+    color: white;
+    margin-top: .65rem;
+
+    &:hover {
+        background-color: google-color(grey, 900);
+    }
+    &:active {
+        background-color: google-color(grey, 800);
+    }
+}
+/* Distinct forms */
+
+.form__contact {
+    
+
+}

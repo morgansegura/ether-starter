@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'gatsby';
 // Components
 import Navigation from './Navigation';
 
@@ -9,7 +9,7 @@ class Header extends Component {
             <header className="header">
                 <div className="container">
                     <div className="header__inner">
-                        <div className="logo">Logo</div>
+                        <Link className="logo">Logo</Link>
                         <Navigation />
                     </div>                
                 </div>

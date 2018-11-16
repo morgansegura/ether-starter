@@ -14,8 +14,8 @@ textarea
 	line-height:1;
 	
 	/* Browsers have different default form fonts */
-	font-size:13px;
-	font-family:Arial;
+	font-size: 16px;
+	font-family: $sans-primary;
 }
 
 input {
@@ -26,9 +26,11 @@ input {
     Webkit outline removed, you must add 
     some style in modules/theme.css for ADA
 */
+*,
 input:focus,
 button:focus,
-select:focus {
+select:focus,
+textarea:focus {
     outline: 0;
 }
 
