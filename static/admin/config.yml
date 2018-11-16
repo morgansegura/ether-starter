@@ -1,14 +1,16 @@
 backend:
-  name: github
+  name: git-gateway
+  branch: master
   accept_roles:
     - admin
     - editor  
   repo:
     name: github
-    repo: morgansegura/ether-starter
-  branch: master
+    repo: https://github.com/morgansegura/ether-starter
   display_url: ether-starter.netlify.com
 
+logo_url: https://your-site.com/images/logo.svg  
+publish_mode: editorial_workflow
 media_folder: static/assets/images
 public_folder: /images
 
