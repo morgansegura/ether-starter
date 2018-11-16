@@ -1,6 +1,13 @@
 backend:
   name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  repo:
+    name: github
+    repo: morgansegura/ther-starter
   branch: master
+  display_url: https://ether-starter.netlify.com
 
 media_folder: static/assets/images
 public_folder: /images
@@ -18,11 +25,12 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+
   - name: "shop"
     label: "Shop"
     folder: "src/pages/shop"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{tags}}/{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "shop-item"}
       - {label: "Title", name: "title", widget: "string"}
@@ -30,6 +38,44 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+
+
+      - {label: Shirts, name: shirts, widget: object, fields: [
+          {label: Title, name: title, widget: string}, 
+          {label: Description, name: description, widget: text}, 
+          {label: Short Description, name: short_description, widget: text}, 
+          {label: Price, name: price, widget: number, default: 29.99, valueType: "float"},
+          {label: Discount, name: discount, widget: number, default: .05, valueType: "float"},
+          {label: Quantity, name: quantity, widget: number, default: 1, valueType: "int"},
+          {label: MainImage, name: main_image, widget: object, 
+            fields: [
+              {label: Image, name: image, widget: image},
+              {label: Alt, name: alt, widget: string}
+            ]
+          },
+          {label: Gallery, name: gallery, widget: list, 
+            fields: [
+              {label: Image, name: image, widget: image},
+              {label: Alt, name: alt, widget: string}
+          ]},
+          {label: Colors, name: colors, widget: select, 
+            options: [
+              { label: "Black", value: "black" },
+              { label: "Charcoal", value: "charcoal" },
+              { label: "Crimson", value: "crimson" },          
+              { label: "Ash", value: "ash" },
+              { label: "Red", value: "red" },
+              { label: "White", value: "white" }
+          ]},
+          {label: Sizes, name: sizes, widget: select, 
+            options: [
+              { label: "Small", value: "SM" },
+              { label: "Medium", value: "MD" },
+              { label: "Large", value: "LG" },           
+              { label: "XL", value: "XL" },
+              { label: "XXL", value: "XXL" }
+          ]}
+        ]}
 
   - name: "pages"
     label: "Pages"
