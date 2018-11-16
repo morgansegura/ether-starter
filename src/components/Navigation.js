@@ -5,8 +5,8 @@ const Navbar = () => (
   <nav className="nav nav__main">
     <div className="container">
       <div className="nav__inner">
-        <Link className="nav__item" to="/products" title="Internal page.">
-          Products
+        <Link className="nav__item" to="/pricing" title="Internal page.">
+          Pricing
         </Link>
         <Link className="nav__item" to="/about" title="Internal page.">
           About
