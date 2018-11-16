@@ -11,7 +11,7 @@ shirts:
       image: /images/chemex.jpg
   main_image:
     alt: Burning Fields
-    image: /images/welk-winter-girl-with-reindeer.jpg
+    image: /images/welk-winter-santa-secret.jpg
   price: 100
   quantity: 100
   short_description: Burning Fields
