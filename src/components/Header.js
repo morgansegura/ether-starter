@@ -9,7 +9,7 @@ class Header extends Component {
             <header className="header">
                 <div className="container">
                     <div className="header__inner">
-                        <Link className="logo">Logo</Link>
+                        <Link className="logo" to="/">Logo</Link>
                         <Navigation />
                     </div>                
                 </div>
