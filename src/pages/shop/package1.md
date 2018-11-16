@@ -5,7 +5,7 @@ date: 2017-01-04T15:04:10.000Z
 shirts:
   colors: black
   description: Burning Fields
-  discount: 10
+  discount: 5
   main_image:
     alt: Burning Fields
     image: /images/welk-winter-santa-secret.jpg
