@@ -8,7 +8,7 @@ shirts:
   discount: 5
   gallery:
     - alt: Alt 1
-      image: /images/chemex.jpg
+      image: /images/welk-winter-girl-with-reindeer.jpg
   main_image:
     alt: Burning Fields
     image: /images/welk-winter-santa-secret.jpg
