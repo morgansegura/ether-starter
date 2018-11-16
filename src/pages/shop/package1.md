@@ -11,7 +11,7 @@ shirts:
       image: /images/welk-winter-girl-with-reindeer.jpg
   main_image:
     alt: Alt Main Image
-    image: /images/welk-winter-girl-with-reindeer.jpg
+    image: ''
   price: 100
   quantity: 100
   short_description: Burning Fields
