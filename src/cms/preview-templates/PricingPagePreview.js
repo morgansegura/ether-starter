@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { PricingPageTemplate } from '../../templates/product-page'
+import { PricingPageTemplate } from '../../templates/pricing-page'
 
 const PricingPagePreview = ({ entry, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
