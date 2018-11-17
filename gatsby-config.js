@@ -9,7 +9,7 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/assets/images`,
+        path: `${__dirname}/static/img`,
         name: 'uploads',
       },
     },
@@ -54,9 +54,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
+        manualInit: false,
+        enableIdentityWidget: true,
         modulePath: `${__dirname}/src/cms/cms.js`,
+        htmlTitle: `Content Manager`,
       },
     },
+    'gatsby-plugin-stripe-checkout',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
