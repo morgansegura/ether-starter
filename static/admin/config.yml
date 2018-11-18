@@ -47,7 +47,20 @@ collections:
             {label: Alt, name: alt, widget: string}
           ]
         }
-      - {label: Item Tags, name: tags, widget: list}        
+      - {label: Item Details, name: itemDetails, widget: list, 
+          fields: [
+            {label: Option, name: option, widget: object,
+              fields: [
+                {label: Option Title, name: optionTitle, widget: string},              
+                {label: Option List, name: optionList, widget: list,
+                  fields: [
+                    {label: Option Item, name: optionItem, widget: string}
+                  ]
+                }                
+              ]
+            }            
+          ]
+        }      
       
   - name: "pages"
     label: "Pages"

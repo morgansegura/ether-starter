@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-// import Img from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -17,13 +15,13 @@ export const ShopItemTemplate = ({
   mainImage,
   description,
   gallery,
-  tags,
+  itemDetails,
   title,
   helmet,
 }) => {
   const ShopItemContent = contentComponent || Content
   const discountPrice = price - (price * (discount / 100)).toFixed(2)
-  console.log(gallery)
+  console.log(itemDetails)
   return (
     <section className="section">
       {helmet || ''}
@@ -32,20 +30,20 @@ export const ShopItemTemplate = ({
           <h1 className="shop-item__title">
             {title}
           </h1>
-          <div className="row">
+          <div className="row">          
             <div className="col-12 col-md-6 main-image">
               <PreviewCompatibleImage className="main-image__item" imageInfo={mainImage} />
             </div>
-            <div className="gallery">
-              {gallery ?
+
+            <div className="col-12 col-md-6 gallery row no-gap">
+              {gallery && gallery.length ?
                 gallery.map((img, i) => (
-                    <div key={i} className="col-12 col-md-6 gallery__item">
+                    <div key={i} className="col-6 gallery__item">
                       <PreviewCompatibleImage imageInfo={img} />
                     </div>
                 )) : null}
             </div>          
           </div>
-
 
           <div className="shop__item">
             <p>Description: {description !== null ? description : null}</p>
@@ -57,7 +55,7 @@ export const ShopItemTemplate = ({
           </p>
 
           { // Discount
-            discount > 0 ?
+            discount && discount > 0 ?
               <div className="discount">
                 <p className="price">
                   <span className="data">{discount}%</span>
@@ -77,7 +75,7 @@ export const ShopItemTemplate = ({
           }
 
           { // Stock Quantity
-            inStock > 0 ?
+            inStock && inStock > 0 ?
               <p className="shop__item price">
                 <span className="data">{inStock}</span>
                 <span className="label">In stock</span>
@@ -89,18 +87,7 @@ export const ShopItemTemplate = ({
           }
 
           <ShopItemContent content={content} />
-          {tags && tags.length ? (
-            <div style={{ marginTop: `4rem` }}>
-              <h4>Tags</h4>
-              <ul className="taglist">
-                {tags.map(tag => (
-                  <li key={tag + `tag`}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+
         </div>
 
       </div>
@@ -117,6 +104,7 @@ ShopItemTemplate.propTypes = {
   inStock: PropTypes.number,
   mainImage: PropTypes.object,
   gallery: PropTypes.array,
+  itemDetails: PropTypes.object,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }
@@ -138,13 +126,13 @@ const ShopItem = ({ data }) => {
             <meta name="description" content={`${post.frontmatter.description}`} />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         price={post.frontmatter.price}
         inStock={post.frontmatter.inStock}
         discount={post.frontmatter.discount}
         mainImage={post.frontmatter.mainImage}
         gallery={post.frontmatter.gallery}
+        itemDetails={post.frontmatter.itemDetails}
       />
     </Layout>
   )
@@ -190,7 +178,14 @@ export const shopQuery = graphql`
           }
           alt
         }
-        tags
+        itemDetails {
+          option {
+            optionTitle
+            optionList {
+              optionItem
+            }
+          }
+        }
       }
     }
   }

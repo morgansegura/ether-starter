@@ -21,5 +21,10 @@ gallery:
     image: /img/6a.jpg
 tags:
   - Blue
+itemDetails:
+  option:
+    - optionTitle: Colors
+      optionList: 
+        - optionItem: Crimson
 ---
 
