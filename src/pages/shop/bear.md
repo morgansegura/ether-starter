@@ -17,6 +17,8 @@ mainImage:
 gallery:
   - alt: Gallery image
     image: /img/6a.jpg
+  - alt: Another image
+    image: /img/6a.jpg
 tags:
   - Blue
 ---
