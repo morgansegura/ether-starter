@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import StripeCheckout from '../components/stripe/StripeCheckout'
 
 export const ShopItemTemplate = ({
   content,
@@ -20,8 +21,11 @@ export const ShopItemTemplate = ({
   helmet,
 }) => {
   const ShopItemContent = contentComponent || Content
-  const discountPrice = price - (price * (discount / 100)).toFixed(2)
-  console.log(itemDetails)
+  price = (price * 100)
+  discount = (discount * 100)
+  const savingsPrice = discount > 0 ? (price - discount) : price
+  const discountPrice = price - savingsPrice 
+  console.log(discountPrice)
   return (
     <section className="section">
       {helmet || ''}
@@ -86,6 +90,22 @@ export const ShopItemTemplate = ({
               </p>
           }
 
+          <div className="">
+            <hr />
+            <h3>Details:</h3>
+            {itemDetails && itemDetails.length ?
+              itemDetails.map((opt, i) => {
+              return (
+                <div key={i} className="">
+                  <h4>{opt.option.optionTitle}</h4>
+                  {opt.option.optionList && opt.option.optionList.length ?
+                    opt.option.optionList.map((list, j) => (
+                      <p key={j}>{list.optionItem}</p>
+                    )) : null}
+                </div>
+              )}) : null}
+          </div> 
+          <StripeCheckout title={title} price={discountPrice} itemDetails={itemDetails} />
           <ShopItemContent content={content} />
 
         </div>
@@ -104,7 +124,7 @@ ShopItemTemplate.propTypes = {
   inStock: PropTypes.number,
   mainImage: PropTypes.object,
   gallery: PropTypes.array,
-  itemDetails: PropTypes.object,
+  itemDetails: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }

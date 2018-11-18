@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 // hardcoded amount (in US cents) to charge users
 // you could set this variable dynamically to charge different amounts
-const amount = 2500
+const amount = 0
 const cardStyles = {
     display: "flex",
     flexDirection: "column",
@@ -29,6 +29,7 @@ const buttonStyles = {
 // Below is where the checkout component is defined.
 // It has several functions and some default state variables.
 class StripeCheckout extends Component {
+    
     state = {
         disabled: false,
         buttonText: "BUY NOW",
@@ -53,8 +54,8 @@ class StripeCheckout extends Component {
         this.setState({ disabled: true, buttonText: "WAITING..." })
         this.stripeHandler.open({
             name: "Demo Product",
-            amount: amount,
-            description: "A product well worth your time",
+            amount: this.props.price,
+            description: this.props.title,
             token: token => {
                 fetch(`AWS_LAMBDA_URL`, {
                     method: "POST",
@@ -82,13 +83,9 @@ class StripeCheckout extends Component {
     }
 
     render() {
+        console.log(this.props.price)
         return (
-            <div style={cardStyles}>
-                <h4>Spend your Money!</h4>
-                <p>
-                    Use any email, 4242 4242 4242 4242 as the credit card number, any 3
-                    digit number, and any future date of expiration.
-                </p>
+            <div className="stripe__payment">
                 <button
                     style={buttonStyles}
                     onClick={event => this.openStripeCheckout(event)}
