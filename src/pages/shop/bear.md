@@ -1,7 +1,7 @@
 ---
 templateKey: shop-item
 date: 2018-11-17T00:03:35.243Z
-title: Bear
+title: Bear T-shirt
 description: >-
   Leverage agile frameworks to provide a robust synopsis for high level
   overviews. Iterative approaches to corporate strategy foster collaborative
