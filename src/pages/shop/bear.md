@@ -10,7 +10,7 @@ description: >-
   empowerment.
 price: 25.99
 inStock: 300
-discount: 21.99
+discount: 22.99
 mainImage:
   alt: Imge
   image: /img/6b.jpg
