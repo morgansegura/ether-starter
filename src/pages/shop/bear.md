@@ -10,7 +10,7 @@ description: >-
   empowerment.
 price: 25.99
 inStock: 300
-discount: 5
+discount: 21.99
 mainImage:
   alt: Imge
   image: /img/6b.jpg
@@ -19,12 +19,16 @@ gallery:
     image: /img/6a.jpg
   - alt: Another image
     image: /img/6a.jpg
-tags:
-  - Blue
 itemDetails:
-  option:
-    - optionTitle: Colors
-      optionList: 
+  - option:
+      optionList:
         - optionItem: Crimson
+        - optionItem: Navy
+      optionTitle: Colors
+  - option:
+      optionList:
+        - optionItem: Small
+        - optionItem: Medium
+      optionTitle: Sizes
 ---
 
