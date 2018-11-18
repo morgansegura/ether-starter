@@ -3,97 +3,106 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
+// import Img from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-// import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const ShopItemTemplate = ({
   content,
   contentComponent,
-  description,
-  shortDescription,
   price,
-  quantity,
+  inStock,
   discount,
   mainImage,
-
+  description,
+  gallery,
   tags,
   title,
   helmet,
 }) => {
   const ShopItemContent = contentComponent || Content
   const discountPrice = price - (price * (discount / 100)).toFixed(2)
-  console.log(mainImage)
+  console.log(gallery)
   return (
     <section className="section">
       {helmet || ''}
       <div className="container content">
-        <div className="columns">
-          <div className="">
-            <h1 className="">
-              {title}
-            </h1>
-
-            <div className="shop__item">
-              <p>{mainImage ? mainImage : 'No image here.'}</p>
+        <div className="shop-item__block">
+          <h1 className="shop-item__title">
+            {title}
+          </h1>
+          <div className="row">
+            <div className="col-12 col-md-6 main-image">
+              <PreviewCompatibleImage className="main-image__item" imageInfo={mainImage} />
             </div>
-
-            <div className="shop__item">
-              <p>Description: {shortDescription !== null ? shortDescription : description}</p>
-            </div>
-
-            <p className="price">
-              <span className="label">Price:</span>
-              <span className="data">${price}</span>
-            </p>
-
-            { // Stock Quantity
-              discount > 0 ?
-                <div className="shop__item">
-                  <p className="price">
-                    <span className="data">{discount}%</span>
-                    <span className="label">off</span>
-                  </p>
-                  <p className="price price__discount">
-                    <span className="label">New Price:</span>
-                    <span className="data">${discountPrice}</span>
-                  </p>
-                </div>
-                :
-                <div className="shop__item">
-                  <p className="price">
-                    <span className="label">Regular price.</span>
-                  </p>
-                </div>
-            }
-
-            { // Stock Quantity
-              quantity > 0 ?
-                <p className="shop__item price">
-                  <span className="data">{quantity}</span>
-                  <span className="label">In stock</span>
-                </p>
-                :
-                <p className="shop__item price">
-                  <span className="label">Out of stock</span>
-                </p>
-            }
-
-            <ShopItemContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+            <div className="gallery">
+              {gallery ?
+                gallery.map((img, i) => (
+                    <div key={i} className="col-12 col-md-6 gallery__item">
+                      <PreviewCompatibleImage imageInfo={img} />
+                    </div>
+                )) : null}
+            </div>          
           </div>
+
+
+          <div className="shop__item">
+            <p>Description: {description !== null ? description : null}</p>
+          </div>
+
+          <p className="price">
+            <span className="label">Price:</span>
+            <span className="data">${price}</span>
+          </p>
+
+          { // Discount
+            discount > 0 ?
+              <div className="discount">
+                <p className="price">
+                  <span className="data">{discount}%</span>
+                  <span className="label">off</span>
+                </p>
+                <p className="price price__discount">
+                  <span className="label">New Price:</span>
+                  <span className="data">${discountPrice}</span>
+                </p>
+              </div>
+              :
+              <div className="shop__item">
+                <p className="price">
+                  <span className="label">Regular price.</span>
+                </p>
+              </div>
+          }
+
+          { // Stock Quantity
+            inStock > 0 ?
+              <p className="shop__item price">
+                <span className="data">{inStock}</span>
+                <span className="label">In stock</span>
+              </p>
+              :
+              <p className="shop__item price">
+                <span className="label">Out of stock</span>
+              </p>
+          }
+
+          <ShopItemContent content={content} />
+          {tags && tags.length ? (
+            <div style={{ marginTop: `4rem` }}>
+              <h4>Tags</h4>
+              <ul className="taglist">
+                {tags.map(tag => (
+                  <li key={tag + `tag`}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
+
       </div>
     </section>
   )
@@ -103,12 +112,11 @@ ShopItemTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
-  shortDescription: PropTypes.string,
-  price: PropTypes.float,
-  discount: PropTypes.float,
-  quantity: PropTypes.number,
+  price: PropTypes.number,
+  discount: PropTypes.number,
+  inStock: PropTypes.number,
   mainImage: PropTypes.object,
-  gallery: PropTypes.object,
+  gallery: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }
@@ -132,12 +140,11 @@ const ShopItem = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        shortDescription={post.frontmatter.shortDescription}
         price={post.frontmatter.price}
-        quantity={post.frontmatter.quantity}
+        inStock={post.frontmatter.inStock}
         discount={post.frontmatter.discount}
-        mainImage={post.frontmatter.main_image}
-      // gallery={post.frontmatter.gallery}
+        mainImage={post.frontmatter.mainImage}
+        gallery={post.frontmatter.gallery}
       />
     </Layout>
   )
@@ -160,15 +167,29 @@ export const shopQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        shortDescription
         price
+        inStock
         discount
-        quantity
-        main_image {
-          image
+        mainImage {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 92) {
+                ...GatsbyImageSharpFluid
+              }
+            }            
+          }
           alt
         }
-
+        gallery {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 92) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          alt
+        }
         tags
       }
     }
