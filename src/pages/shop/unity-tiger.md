@@ -10,7 +10,7 @@ description: >-
   offshoring.
 price: 23.99
 inStock: 100
-discount: .nan
+discount: 20.99
 mainImage:
   alt: Main image
   image: /img/2c.jpg
