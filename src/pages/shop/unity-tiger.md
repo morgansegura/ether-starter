@@ -22,18 +22,23 @@ gallery:
 dimensions:
   more:
     - {}
-color: {}
+color:
+  color:
+    - color: White
+      hex: '#ffffff'
+    - color: Black
+      hex: '#000000'
+    - color: Charcoal
+      hex: '#333333'
 size:
-  item:
+  size:
     - hex: S
-      item: Small
-    - hex: M
-      item: Medium
+      size: Small
+    - hex: MD
+      size: Medium
     - hex: L
-      item: Large
+      size: Large
     - hex: XL
-      item: Extra Large
-    - hex: 2XL
-      item: Double XL
+      size: Extra Large
 ---
 
