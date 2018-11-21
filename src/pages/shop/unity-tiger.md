@@ -19,9 +19,8 @@ gallery:
     image: /img/2a.jpg
   - alt: Gallery two
     image: /img/2b.jpg
-dimensions:
-  more:
-    - {}
+details:
+  weight: 1oz
 color:
   color:
     - color: White
