@@ -20,7 +20,9 @@ gallery:
   - alt: Gallery two
     image: /img/2b.jpg
 details:
-  weight: 1oz
+  more:
+    - item: 1lb
+      label: Weight
 color:
   color:
     - color: White
