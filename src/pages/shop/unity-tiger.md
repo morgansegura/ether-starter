@@ -20,11 +20,9 @@ gallery:
   - alt: Gallery two
     image: /img/2b.jpg
 color:
-  black: true
-  cardinal: true
-  navy: true
-  radioSelect: true
-  white: true
+  color:
+    - color: Red
+      colorBool: true
 size:
   large: true
   medium: true
