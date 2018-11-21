@@ -32,13 +32,13 @@ color:
       hex: '#333333'
 size:
   size:
-    - hex: S
+    - short: S
       size: Small
-    - hex: MD
+    - short: M
       size: Medium
-    - hex: L
+    - short: L
       size: Large
-    - hex: XL
+    - short: XL
       size: Extra Large
 ---
 
