@@ -20,10 +20,10 @@ gallery:
   - alt: Gallery two
     image: /img/2b.jpg
 color:
-  bool: true
   color:
     - color: Red
     - color: Navy
+  radio: true
 size:
   radio: true
   size:
