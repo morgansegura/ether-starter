@@ -33,7 +33,7 @@ color:
       hex: '#333333'
     - color: Red
       hex: '#cc0000'
-  style: selectList
+  style: radioList
 size:
   size:
     - short: S
