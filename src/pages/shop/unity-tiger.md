@@ -19,16 +19,26 @@ gallery:
     image: /img/2a.jpg
   - alt: Gallery two
     image: /img/2b.jpg
+dimensions:
+  more:
+    - {}
 color:
   color:
-    - color: Red
-    - color: Navy
-  radio: true
+    - color: White
+      hex: '#ffffff'
+    - color: Black
+      hex: '#000000'
+    - color: Charcoal
+      hex: '#333333'
 size:
-  radio: true
   size:
-    - size: Small
-    - size: Medium
-    - {}
+    - hex: S
+      size: Small
+    - hex: MD
+      size: Medium
+    - hex: L
+      size: Large
+    - hex: XL
+      size: Extra Large
 ---
 
