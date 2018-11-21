@@ -20,14 +20,15 @@ gallery:
   - alt: Gallery two
     image: /img/2b.jpg
 color:
+  bool: true
   color:
     - color: Red
-      colorBool: true
+    - color: Navy
 size:
-  large: true
-  medium: true
-  radioSelect: true
-  small: true
-  xl: true
+  radio: true
+  size:
+    - size: Small
+    - size: Medium
+    - {}
 ---
 
