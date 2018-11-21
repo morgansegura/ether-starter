@@ -19,19 +19,17 @@ gallery:
     image: /img/2a.jpg
   - alt: Gallery two
     image: /img/2b.jpg
-itemDetails:
-  - option:
-      optionList:
-        - optionItem: White
-        - optionItem: Black
-        - optionItem: Navy
-      optionTitle: Colors
-  - option:
-      optionList:
-        - optionItem: Small
-        - optionItem: Medium
-        - optionItem: Large
-        - optionItem: XL
-      optionTitle: Sizes
+color:
+  black: true
+  cardinal: true
+  navy: true
+  radioSelect: true
+  white: true
+size:
+  large: true
+  medium: true
+  radioSelect: true
+  small: true
+  xl: true
 ---
 
