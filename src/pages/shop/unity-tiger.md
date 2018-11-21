@@ -19,9 +19,10 @@ gallery:
     image: /img/2a.jpg
   - alt: Gallery two
     image: /img/2b.jpg
-dimensions:
+details:
   more:
-    - {}
+    - item: 1lb
+      label: Weight
 color:
   color:
     - color: White
@@ -30,6 +31,8 @@ color:
       hex: '#000000'
     - color: Charcoal
       hex: '#333333'
+    - color: Red
+      hex: '#cc0000'
 size:
   size:
     - short: S
