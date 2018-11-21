@@ -19,16 +19,21 @@ gallery:
     image: /img/2a.jpg
   - alt: Gallery two
     image: /img/2b.jpg
-color:
-  color:
-    - color: Red
-    - color: Navy
-  radio: true
-size:
-  radio: true
-  size:
-    - size: Small
-    - size: Medium
+dimensions:
+  more:
     - {}
+color: {}
+size:
+  item:
+    - hex: S
+      item: Small
+    - hex: M
+      item: Medium
+    - hex: L
+      item: Large
+    - hex: XL
+      item: Extra Large
+    - hex: 2XL
+      item: Double XL
 ---
 
