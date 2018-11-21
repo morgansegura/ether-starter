@@ -33,6 +33,7 @@ color:
       hex: '#333333'
     - color: Red
       hex: '#cc0000'
+  style: selectList
 size:
   size:
     - short: S
