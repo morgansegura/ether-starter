@@ -30,6 +30,8 @@ color:
       hex: '#000000'
     - color: Charcoal
       hex: '#333333'
+    - color: Red
+      hex: '#cc0000'
 size:
   size:
     - short: S
