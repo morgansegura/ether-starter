@@ -4,8 +4,8 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import StripeCheckout from '../components/stripe/StripeCheckout'
+import ShoppingCart from '../components/ShoppingCart'
+import { convertWholeDollarsToCents } from '../helpers.js';
 
 export const ShopItemTemplate = ({
   content,
@@ -15,99 +15,44 @@ export const ShopItemTemplate = ({
   discount,
   mainImage,
   description,
+  color,
+  size,
   gallery,
-  itemDetails,
   title,
+  details,
   helmet,
 }) => {
   const ShopItemContent = contentComponent || Content
-  price = (price * 100)
-  discount = (discount * 100)
-  const savingsPrice = discount > 0 ? (price - discount) : price
-  const discountPrice = price - savingsPrice 
-  console.log(discountPrice)
+
+  const priceDiscount = discount === null ? 0 : convertWholeDollarsToCents(discount)
+  price = price === 0 ? price : convertWholeDollarsToCents(price)
+  const savings = price - priceDiscount
+
+  const product = {
+    title,
+    description,
+    color,
+    size,
+    mainImage,
+    priceDiscount,
+    details,
+    gallery,
+    inStock,
+    price,
+    savings
+  }
+
   return (
+    
     <section className="section">
       {helmet || ''}
-      <div className="container content">
+      <div className="container">
         <div className="shop-item__block">
           <h1 className="shop-item__title">
             {title}
           </h1>
-          <div className="row">          
-            <div className="col-12 col-md-6 main-image">
-              <PreviewCompatibleImage className="main-image__item" imageInfo={mainImage} />
-            </div>
-
-            <div className="col-12 col-md-6 gallery row no-gap">
-              {gallery && gallery.length ?
-                gallery.map((img, i) => (
-                    <div key={i} className="col-6 gallery__item">
-                      <PreviewCompatibleImage imageInfo={img} />
-                    </div>
-                )) : null}
-            </div>          
-          </div>
-
-          <div className="shop__item">
-            <p>Description: {description !== null ? description : null}</p>
-          </div>
-
-          <p className="price">
-            <span className="label">Price:</span>
-            <span className="data">${price}</span>
-          </p>
-
-          { // Discount
-            discount && discount > 0 ?
-              <div className="discount">
-                <p className="price">
-                  <span className="data">{discount}%</span>
-                  <span className="label">off</span>
-                </p>
-                <p className="price price__discount">
-                  <span className="label">New Price:</span>
-                  <span className="data">${discountPrice}</span>
-                </p>
-              </div>
-              :
-              <div className="shop__item">
-                <p className="price">
-                  <span className="label">Regular price.</span>
-                </p>
-              </div>
-          }
-
-          { // Stock Quantity
-            inStock && inStock > 0 ?
-              <p className="shop__item price">
-                <span className="data">{inStock}</span>
-                <span className="label">In stock</span>
-              </p>
-              :
-              <p className="shop__item price">
-                <span className="label">Out of stock</span>
-              </p>
-          }
-
-          <div className="">
-            <hr />
-            <h3>Details:</h3>
-            {itemDetails && itemDetails.length ?
-              itemDetails.map((opt, i) => {
-              return (
-                <div key={i} className="">
-                  <h4>{opt.option.optionTitle}</h4>
-                  {opt.option.optionList && opt.option.optionList.length ?
-                    opt.option.optionList.map((list, j) => (
-                      <p key={j}>{list.optionItem}</p>
-                    )) : null}
-                </div>
-              )}) : null}
-          </div> 
-          <StripeCheckout title={title} price={discountPrice} itemDetails={itemDetails} />
+          {<ShoppingCart product={product} />}
           <ShopItemContent content={content} />
-
         </div>
 
       </div>
@@ -120,11 +65,13 @@ ShopItemTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   price: PropTypes.number,
+  color: PropTypes.object,
+  size: PropTypes.object,
   discount: PropTypes.number,
   inStock: PropTypes.number,
   mainImage: PropTypes.object,
+  details: PropTypes.object,
   gallery: PropTypes.array,
-  itemDetails: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }
@@ -152,8 +99,11 @@ const ShopItem = ({ data }) => {
         discount={post.frontmatter.discount}
         mainImage={post.frontmatter.mainImage}
         gallery={post.frontmatter.gallery}
-        itemDetails={post.frontmatter.itemDetails}
+        color={post.frontmatter.color}
+        size={post.frontmatter.size}
+        details={post.frontmatter.details}
       />
+  
     </Layout>
   )
 }
@@ -178,6 +128,26 @@ export const shopQuery = graphql`
         price
         inStock
         discount
+        color {
+          style
+          options {
+            option
+            hex
+          }
+        }         
+        size {
+          options {
+            option
+            short
+          }
+        }  
+        details {
+          more {
+            label
+            item
+          }
+        }
+
         mainImage {
           image {
             childImageSharp {
@@ -198,14 +168,7 @@ export const shopQuery = graphql`
           }
           alt
         }
-        itemDetails {
-          option {
-            optionTitle
-            optionList {
-              optionItem
-            }
-          }
-        }
+
       }
     }
   }
