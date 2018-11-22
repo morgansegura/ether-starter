@@ -24,25 +24,23 @@ details:
     - item: 1lb
       label: Weight
 color:
-  options:
-    - hex: '#cc0000'
-      option: Red
-    - hex: '#ffffff'
-      option: White
-    - hex: '#000000'
-      option: Black
+  color:
+    - color: White
+      hex: '#ffffff'
+    - color: Black
+      hex: '#000000'
   style: radioList
 size:
-  options:
-    - option: Small
-      short: S
-    - option: Medium
-      short: M
-    - option: Large
-      short: L
-    - option: Extra Large
-      short: XL
-    - option: Double Extra Large
-      short: 2XL
+  size:
+    - short: S
+      size: Small
+    - short: M
+      size: Medium
+    - short: L
+      size: Large
+    - short: XL
+      size: Extra Large
+    - short: 2XL
+      size: Double Extra Large
 ---
 
