@@ -33,6 +33,9 @@ color:
       hex: '#333333'
     - color: Red
       hex: '#cc0000'
+    - color: Orange
+      hex: '#ffcc00'
+    - {}
   style: radioList
 size:
   size:
