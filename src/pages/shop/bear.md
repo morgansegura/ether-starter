@@ -19,16 +19,11 @@ gallery:
     image: /img/6a.jpg
   - alt: Another image
     image: /img/6a.jpg
-itemDetails:
-  - option:
-      optionList:
-        - optionItem: Crimson
-        - optionItem: Navy
-      optionTitle: Colors
-  - option:
-      optionList:
-        - optionItem: Small
-        - optionItem: Medium
-      optionTitle: Sizes
+details:
+  more: []
+color:
+  style: radioList
+size:
+  style: radioList
 ---
 
