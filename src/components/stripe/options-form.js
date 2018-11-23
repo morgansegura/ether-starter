@@ -84,40 +84,42 @@ class OptionsForm extends Component {
 
     render() {
         let itemList = this.props.product
-        let fields = undefined
-        console.log(itemList.color)
-            if (itemList.color !== null) {
-                fields = <OptionField state={this.state} field="color" product={itemList} />
-            }
+        // console.log(itemList.color)
 
-            return (
-                <form className="form" onSubmit={this.handleSubmit}>
-                    <div className="form-element">
-                        <p className="error">{this.state.error}</p>
-                        <label>
-                            <span className="label">Quantity:</span>
-                            <input
-                                type="number"
-                                name="amount"
-                                min="0"
-                                value={this.state.amount}
-                                onChange={this.handleAmountChange}
-                            />
-                        </label>
-                    </div>
+        return (
+            <form className="form" onSubmit={this.handleSubmit}>
+                <div className="form-element">
+                    <p className="error">{this.state.error}</p>
+                    <label>
+                        <span className="label">Quantity:</span>
+                        <input
+                            type="number"
+                            name="amount"
+                            min="0"
+                            value={this.state.amount}
+                            onChange={this.handleAmountChange}
+                        />
+                    </label>
+                </div>
 
-                    <div className="form-element">
-                        {fields}
-                    </div>
+                {itemList.color && itemList.color !== null ?  
+                <div className="form-element">                    
+                    <OptionField handleInputChange={this.handleInputChange} state={this.state} field="color" product={itemList} />
+                </div>
+                :  
+                <div className="form-element">                    
+                    <OptionField handleInputChange={this.handleInputChange} state={this.state} field="size" product={itemList} />
+                </div>
+                }
 
-                    <h4 className="t-center my-20">{`Add ${isNaN(this.state.amount) ? '__' : this.state.amount}, ${this.state.size}, ${this.state.color}, ${this.props.product.title}${pluralize(this.state.amount)} for $${isNaN(convertCentsToWholeDollars(this.state.price)) ? '__' : convertCentsToWholeDollars(this.state.price)} to your cart?`}</h4>                 
-                    <div className="btn__block justify-content-end">
-                        <button className="btn btn--md btn__sm-round btn__submit" type="submit" name="submit">
-                            Buy Now
-                        </button>                    
-                    </div>
-                </form>
-            );
+                <h4 className="t-center my-20">{`Add ${isNaN(this.state.amount) ? '__' : this.state.amount}, ${this.state.size}, ${this.state.color}, ${this.props.product.title}${pluralize(this.state.amount)} for $${isNaN(convertCentsToWholeDollars(this.state.price)) ? '__' : convertCentsToWholeDollars(this.state.price)} to your cart?`}</h4>                 
+                <div className="btn__block justify-content-end">
+                    <button className="btn btn--md btn__sm-round btn__submit" type="submit" name="submit">
+                        Buy Now
+                    </button>                    
+                </div>
+            </form>
+        );
 
     }
 }

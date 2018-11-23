@@ -130,14 +130,14 @@ export const shopQuery = graphql`
         discount
         color {
           style
-          options {
-            option
+          color {
+            color
             hex
           }
         }         
         size {
-          options {
-            option
+          size {
+            size
             short
           }
         }  

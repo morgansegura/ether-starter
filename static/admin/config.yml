@@ -47,21 +47,51 @@ collections:
             {label: Alt, name: alt, widget: string}
           ]
         }
-      - {label: Item Details, name: itemDetails, widget: list, 
+         
+      - {label: Details, name: details, widget: object,
           fields: [
-            {label: Option, name: option, widget: object,
+            {label: More, name: more, widget: list,
               fields: [
-                {label: Option Title, name: optionTitle, widget: string},              
-                {label: Option List, name: optionList, widget: list,
-                  fields: [
-                    {label: Option Item, name: optionItem, widget: string}
-                  ]
-                }                
+                {label: New Item Label, name: label, widget: string, default: none},
+                {label: New Item Option, name: item, widget: string, default: none}
               ]
-            }            
+            },
           ]
-        }      
-      
+        }
+         
+      - {label: Color - Hex grid (https://htmlcolorcodes.com/), name: color, widget: object,                      
+          fields: [
+            {label: Layout, name: style, widget: select, default: radioList,
+              options: [
+                {label: Radio Button List, value: radioList},
+                {label: Select Menu List, value: selectList}             
+              ]
+            },
+            {label: New Color, name: color, widget: list,
+              fields: [
+                {label: Color, name: color, widget: string},
+                {label: Hex Color (optional - ex.`#ffffff`), name: hex, widget: string}
+              ]                
+            }
+          ]
+        }
+      - {label: Size, name: size, widget: object,                      
+          fields: [
+            {label: Layout, name: style, widget: select, default: radioList,
+              options: [
+                {label: Radio Button List, value: radioList},
+                {label: Select Menu List, value: selectList}             
+              ]
+            },    
+            {label: New Size, name: size, widget: list,
+              fields: [
+                {label: Size, name: size, widget: string},
+                {label: Short Name (optional - ex.SM), name: short, widget: string}
+              ]                
+            }
+          ]
+        }
+
   - name: "pages"
     label: "Pages"
     create: true
