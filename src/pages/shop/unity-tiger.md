@@ -42,5 +42,6 @@ size:
       size: Extra Large
     - short: 2XL
       size: Double Extra Large
+  style: radioList
 ---
 
