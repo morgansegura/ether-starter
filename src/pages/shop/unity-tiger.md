@@ -40,7 +40,8 @@ size:
     - amount: 20
       short: M
       size: Medium
-    - short: L
+    - amount: 5
+      short: L
       size: Large
     - amount: 0
       short: XL
