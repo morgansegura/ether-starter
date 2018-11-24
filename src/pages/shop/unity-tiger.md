@@ -29,6 +29,8 @@ color:
       hex: '#ffffff'
     - color: Black
       hex: '#000000'
+    - color: Red
+      hex: '#cc0000'
   style: radioList
 size:
   size:
