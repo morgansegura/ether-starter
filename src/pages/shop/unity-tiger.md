@@ -31,7 +31,7 @@ color:
       hex: '#000000'
     - color: Red
       hex: '#cc0000'
-  style: radioList
+  style: selectList
 size:
   size:
     - short: S
@@ -44,6 +44,6 @@ size:
       size: Extra Large
     - short: 2XL
       size: Double Extra Large
-  style: radioList
+  style: selectList
 ---
 
