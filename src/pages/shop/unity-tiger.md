@@ -34,15 +34,19 @@ color:
   style: radioList
 size:
   size:
-    - short: S
+    - amount: 20
+      short: S
       size: Small
-    - short: M
+    - amount: 20
+      short: M
       size: Medium
     - short: L
       size: Large
-    - short: XL
+    - amount: 0
+      short: XL
       size: Extra Large
-    - short: 2XL
+    - amount: 10
+      short: 2XL
       size: Double Extra Large
   style: radioList
 ---
