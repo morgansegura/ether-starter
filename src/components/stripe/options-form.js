@@ -15,7 +15,8 @@ class OptionsForm extends Component {
             amount: 0,
             price: 0,
             error: '',
-            color: 'White'
+            color: 'White',
+            size: 'Small'
         };
 
         this.handleAmountChange = this.handleAmountChange.bind(this);
@@ -67,7 +68,8 @@ class OptionsForm extends Component {
             productId: this.props.product.productId,
             amount: this.state.amount,
             price: this.state.price,
-            color: this.state.color
+            color: this.state.color,
+            size: this.state.state,
         };
 
         this.props.onFormSubmit(product);
@@ -78,7 +80,7 @@ class OptionsForm extends Component {
             price: 0,
             error: '',
             colors: this.state.color,
-            // Sizes: this.state.Sizes,
+            size: this.state.size
         });
     }
 
@@ -91,14 +93,14 @@ class OptionsForm extends Component {
                 <div className="form-element">
                     <p className="error">{this.state.error}</p>
                     <label>
-                        <span className="label">Quantity:</span>
+                        <p className="label"><span>Quantity:</span> 
                         <input
                             type="number"
                             name="amount"
                             min="0"
                             value={this.state.amount}
                             onChange={this.handleAmountChange}
-                        />
+                            /></p>
                     </label>
                 </div>
 

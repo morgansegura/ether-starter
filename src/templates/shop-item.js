@@ -136,6 +136,7 @@ export const shopQuery = graphql`
           }
         }         
         size {
+          style
           size {
             size
             short
