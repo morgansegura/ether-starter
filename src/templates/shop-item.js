@@ -44,17 +44,13 @@ export const ShopItemTemplate = ({
 
   return (
     
-    <section className="section">
+    <section className="section product">
       {helmet || ''}
-      <div className="container">
-        <div className="shop-item__block">
-          <h1 className="shop-item__title">
-            {title}
-          </h1>
-          {<ShoppingCart product={product} />}
+      <div className="container product__container">
+        <div className="product__block">
+          <ShoppingCart product={product} />
           <ShopItemContent content={content} />
         </div>
-
       </div>
     </section>
   )
@@ -140,6 +136,7 @@ export const shopQuery = graphql`
           size {
             size
             short
+            amount
           }
         }  
         details {

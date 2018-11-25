@@ -90,6 +90,12 @@ label {
 }
 /* Distinct forms */
 
+.form__element {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
 .form__contact {
     
 
@@ -119,8 +125,10 @@ label {
             display: block;
             width: 33px;
             height: 33px;
-            left: -4px;
-            top: -3px;
+            left: 0;
+            top: 0;
+            margin-top: -3px;
+            margin-left: -4px;
             border-radius: 50%;
             border: 2px solid color(black a(.1));            
         }
@@ -154,15 +162,29 @@ label {
             cursor: pointer;  
             border: none;
         }       
+        input[type='radio']:disabled:hover {}
+        &.disabled:hover label.sold-out {
+            opacity: 1;
+            visibility: visible;
+            background-color: google-color(grey, 200);
+            cursor: text; 
+            font-size: 12px;
+            font-weight: 400;
+            border-radius: 3px; 
+            width: 34px;
+            height: 34px;       
+        }        
 
         input[type='radio']::after {
             content: "";
+            z-index: 2;
+            overflow: hidden;
             position: absolute;
             display: block;
             width: 100%;
             height: 100%;            
             border-radius: 3px;
-            border: 1px solid google-color(grey, 300);
+            border: 2px solid google-color(grey, 400);
         }
 
         input[type='radio']:checked::after {
@@ -171,7 +193,7 @@ label {
         }
 
         label {
-            z-index: -1;
+            z-index: 1;
             cursor: pointer;
             position: absolute; 
             top: 50%;
@@ -183,21 +205,45 @@ label {
             color: google-color(grey, 700);
             display: flex;
             align-items: center;
+            border-radius: 3px;
             justify-content: center;
-            width: 100%;
-            height: 100%;            
-            background-color: google-color(grey, 100);            
+            width: 99%;
+            height: 99%;            
+            background-color: google-color(grey, 100);
             user-select: none;
             -moz-user-select: none;
             -khtml-user-select: none;
             -webkit-user-select: none;
-            -o-user-select: none;            
+            -o-user-select: none;
         }
+        label.sold-out {
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity .3s ease-out, transition .3s ease-out;
+        }        
     }
 }
 .label {
     font-weight: 400;
-    span {
-        font-weight: 600;
+    span {}
+}
+
+.btn__cta {
+    background-color: $cta;
+    color: white;
+}
+.btn__grey-outline {
+    border: 2px solid google-color(grey, 400);
+    color: google-color(grey, 700);
+
+    &:hover {
+        border-color: transparent;
+        background-color: google-color(grey, 700);
+        color: white;
     }
+}
+
+.form__options {
+    width: 100%;
 }

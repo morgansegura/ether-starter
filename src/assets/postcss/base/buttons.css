@@ -8,6 +8,7 @@
     cursor: pointer;
     display: inline-block;
     padding: 13px 30px;
+    border: 2px solid transparent;
 
     &__outline {
         background-color: transparent;
@@ -22,6 +23,10 @@
     }    
 
     /* Sizes */
+    &--tiny {
+        font-size: 14px;
+        padding: 0 10px;
+    }
     &--sm {
         font-size: 14px;
         padding: 10px 20px;

@@ -9,10 +9,10 @@ const OptionField = (props) => {
     }
 
     return (       
-        <div> 
+        <div className="form__options"> 
             {props.field && props.field === 'color' && props.product.color.style && props.product.color.style === 'radioList' ?
-            <div>            
-                <p className="label"><span>Color:</span> {props.state.color}</p>
+            <div className="card__field">            
+                <p className="label"><span className="b6">Color:</span> {props.state.color}</p>
                 <div className="d-flex">
                     {props.product.color.color.map((c, i) => {
                         return (
@@ -33,8 +33,8 @@ const OptionField = (props) => {
                 </div>             
             </div>           
         : 
-            <div>
-                <p className="label"><span>Color:</span> </p>
+            <div className="card__field">
+                <p className="label"><span className="b6">Color:</span> </p>
                 <select
                     multiple={false}
                     name="color"
@@ -49,12 +49,12 @@ const OptionField = (props) => {
             </div>
         }
         {props.field && props.field === 'color' && props.product.size.style && props.product.size.style === 'radioList' ?
-            <div>
-                <p className="label"><span>Size:</span> {props.state.size}</p>
+            <div className="card__field">
+                <p className="label"><span className="b6">Size:</span> {props.state.size}</p>
                 <div className="d-flex">
                     {props.product.size.size.map((c, i) => {
                         return (
-                            <div key={i} className="radio__size mr-5 mb-5">
+                            <div key={i} className={c.amount === 0 ? `radio__size mr-5 mb-5 disabled` : `radio__size mr-5 mb-5`}>
                                 <input
                                     type="radio"
                                     checked={props.state.size === c.size}
@@ -62,16 +62,18 @@ const OptionField = (props) => {
                                     name="size"
                                     placeholder={c.short}
                                     value={c.size}
+                                    disabled={c.amount === 0 ? true : false}
                                 />
                                 <label>{c.short}</label>
+                                <label className="sold-out">Sold Out</label>
                             </div>
                         )
                     })}
                 </div>   
             </div>        
         : 
-            <div>
-                <p className="label"><span>Size:</span> </p>
+            <div className="card__field">
+                <p className="label"><span className="b6">Size:</span> </p>
                 <select
                     multiple={false}
                     name="size"

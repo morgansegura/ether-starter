@@ -80,13 +80,14 @@ collections:
             {label: Layout, name: style, widget: select, default: radioList,
               options: [
                 {label: Radio Button List, value: radioList},
-                {label: Select Menu List, value: selectList}             
+                {label: Select Menu List, value: selectList}           
               ]
             },    
             {label: New Size, name: size, widget: list,
               fields: [
                 {label: Size, name: size, widget: string},
-                {label: Short Name (optional - ex.SM), name: short, widget: string}
+                {label: Short Name (optional - ex.SM), name: short, widget: string},
+                {label: Amount (total in stock), name: amount, widget: number, valueType: int}
               ]                
             }
           ]

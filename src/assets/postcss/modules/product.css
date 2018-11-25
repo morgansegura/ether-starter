@@ -1,0 +1,43 @@
+.product {
+    
+}
+.product__container {
+
+}
+.product__block {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 0 0 3px 3px;
+    background-color: google-color(grey, 300);
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.product__title {    
+    line-height: 1;
+    background-color: google-color(grey, 900);
+    border-radius: 3px 3px 0 0;
+    color: white;
+    font-weight: 400;
+    font-size: 24px;
+    padding-top: 15px;  
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-bottom: 10px;
+}
+.product__paragraph {
+    padding-bottom: 10px;
+}
+.product__gallery-image {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+.product__main-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product__form {
+    margin-top: 20px;
+}

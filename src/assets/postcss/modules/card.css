@@ -1,0 +1,12 @@
+.card {
+    
+}
+
+.card__field {
+    background-color: google-color(grey, 50);
+    border-radius: 6px;
+    padding: 5px 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 0 color(black a(.1)); 
+    width: 100%;
+}

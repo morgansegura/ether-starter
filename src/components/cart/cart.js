@@ -2,6 +2,7 @@ import React from 'react';
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import {
     convertWholeDollarsToCents,
+    convertCentsToWholeDollars,
     pluralize,
     calculateProductTotals
 } from '../../helpers.js';
@@ -20,14 +21,11 @@ class Cart extends React.Component {
             gallery
         }
 
-        // console.log('===== cartjs =====')
-        // console.log(this.state)
-        // console.log('===== [end] cartjs =====')
-
         this.renderStatus = this.renderStatus.bind(this);
         this.renderCartItems = this.renderCartItems.bind(this);
         this.removeFromCart = this.removeFromCart.bind(this);
         this.openStripeCheckout = this.openStripeCheckout.bind(this);
+        console.log(this.props)
     }
 
     componentDidMount() {
@@ -41,6 +39,7 @@ class Cart extends React.Component {
     openStripeCheckout(event) {
         event.preventDefault();
 
+        // const image = this.props.product.images.find(image => image.file.url.includes('black'));
         const image = this.props.product.images.find(image => image.file.url.includes('black'));
         const imageUrl = image.file.url;
         const cartItems = this.props.cart.items;
@@ -85,7 +84,7 @@ class Cart extends React.Component {
 
         if (cartItems.length) {
             const totals = calculateProductTotals(cartItems);
-            status = `It looks like you're buying <strong>${totals.amount} unicorns</strong> for a grand total of <strong>$${totals.price}</strong>. Sweet!`;
+            status = `It looks like you're buying <strong>${totals.amount} unicorns</strong> for a grand total of <strong>$${convertCentsToWholeDollars(totals.price)}</strong>. Sweet!`;
         }
 
         return { __html: status };
@@ -103,7 +102,7 @@ class Cart extends React.Component {
 
             return (
                 <li className="cart-item" key={item.id}>
-                    <div className="cancel" onClick={(e) => this.removeFromCart(item.id)}>remove</div>
+                    <div className="btn btn--tiny btn__grey-outline btn__round cancel" onClick={(e) => this.removeFromCart(item.id)}> <i className="fas fa-times"></i>remove</div>
                     <PreviewCompatibleImage className="main-image__item" imageInfo={this.state.mainImage} /> 
                     <p className="description">{item.amount} {item.size}, {item.color} <br /> unicorns</p>
                     <p className="price">${item.price}</p>
@@ -122,8 +121,10 @@ class Cart extends React.Component {
             return (
                 <div>
                     <p className="status" dangerouslySetInnerHTML={this.renderStatus()} />
-                    <button className="buy" name="buy" onClick={(e) => this.openStripeCheckout(e)}>Buy Now!</button>
-                    <button className="clear-cart" name="clear-cart" onClick={this.props.removeAllFromCart}>Clear All</button>
+                    <div className="btn__block">
+                        <button className="btn btn--sm btn__cta btn__sm-round buy mr-5 my-10" name="buy" onClick={(e) => this.openStripeCheckout(e)}>Buy Now!</button>
+                        <button className="btn btn--sm btn__grey-outline btn__sm-round clear-cart ml-5 my-10" name="clear-cart" onClick={this.props.removeAllFromCart}>Clear All</button>
+                    </div>
                     <ul className="cart-items">
                         {this.renderCartItems()}
                     </ul>

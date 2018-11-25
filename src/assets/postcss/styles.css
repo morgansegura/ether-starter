@@ -20,5 +20,7 @@
 @import 'modules/navigation';
 @import 'modules/section';
 @import 'modules/blog';
+@import 'modules/product';
 @import 'modules/forms';
+@import 'modules/card';
 @import 'modules/theme'; /* Keep this last-ish */
