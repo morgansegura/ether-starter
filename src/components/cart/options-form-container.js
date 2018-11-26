@@ -36,42 +36,6 @@ class OptionsFormContainer extends Component {
             alt: newImage.description
         });
     }
-    // handleFormSubmit(product) {
-    //     const items = [...this.state.cart.items, product];
-    //     this.setState({
-    //         cart: {
-    //             id: uuid(),
-    //             date: moment().format('MMMM Do YYYY, h:mm:ss a'),
-    //             items
-    //         }
-    //     });
-    // }
-    // removeFromCart(productId) {
-    //     let items = [];
-
-    //     if (this.state.cart.items.length > 1) {
-    //         items = this.state.cart.items.filter(item => item.id !== productId);
-    //     }
-
-    //     this.setState({
-    //         cart: {
-    //             id: uuid(),
-    //             date: moment().format('MMMM Do YYYY, h:mm:ss a'),
-    //             items
-    //         }
-    //     })
-    // }
-
-    // removeAllFromCart() {
-    //     this.setState({
-    //         cart: {
-    //             id: '',
-    //             date: '',
-    //             items: []
-    //         }
-    //     })
-    // }
-
 
     render() {
         return (

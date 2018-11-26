@@ -2,15 +2,10 @@ import React from 'react';
 
 const OptionField = (props) => {
 
-    console.log(props)
-
-    if (props.product.style === 'radioList') {
-        console.log('this checks out')
-    }
-
     return (       
-        <div className="form__options"> 
-            {props.field && props.field === 'color' && props.product.color.style && props.product.color.style === 'radioList' ?
+        
+        <div className="form__options">             
+        {props.field === 'color' && props.product.color.style && props.product.color.style === 'radioList' ?
             <div className="card__field">            
                 <p className="label"><span className="b6">Color:</span> {props.state.color}</p>
                 <div className="d-flex">
@@ -48,7 +43,7 @@ const OptionField = (props) => {
                 </select>            
             </div>
         }
-        {props.field && props.field === 'color' && props.product.size.style && props.product.size.style === 'radioList' ?
+        {props.field && props.field === 'size' && props.product.size.style && props.product.size.style === 'radioList' ?
             <div className="card__field">
                 <p className="label"><span className="b6">Size:</span> {props.state.size}</p>
                 <div className="d-flex">
