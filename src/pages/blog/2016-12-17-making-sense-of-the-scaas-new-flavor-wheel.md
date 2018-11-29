@@ -15,8 +15,10 @@ gallery:
     image: /img/products-full-width.jpg
   - alt: Coffee Beans
     image: /img/products-grid1.jpg
-  - image: /img/6a.jpg
-  - image: /img/tutorials.png
+  - alt: alt1
+    image: /img/6a.jpg
+  - alt: alt2
+    image: /img/tutorials.png
 tags:
   - flavor
   - tasting
@@ -62,6 +64,4 @@ plugins: [
 
 # Look at this Video:
 
-`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
-`youtube: https://www.youtube.com/watch?v=2Xc9gXyf2G4`
-`youtube: 2Xc9gXyf2G4`
+`video: https://www.youtube.com/watch?v=cMHlbEdoXTo`
