@@ -7,10 +7,9 @@ description: >-
   ordeal, but once you get used to the process, it becomes a soothing ritual
   that's worth the effort every time.
 featuredImage:
-  alt: hello
-  image: /img/2c.jpg
-gallery:
-  - image: /img/2c.jpg
+  alt: ''
+  image: ''
+gallery: []
 tags:
   - brewing
   - chemex
