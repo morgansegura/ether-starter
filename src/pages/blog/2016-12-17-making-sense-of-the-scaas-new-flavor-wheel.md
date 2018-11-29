@@ -20,6 +20,7 @@ tags:
   - tasting
   - yum
 ---
+
 ![flavor wheel](/img/flavor_wheel.jpg)
 
 The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
@@ -43,10 +44,16 @@ Coffee cupping, or coffee tasting, is the practice of observing the tastes and a
 
 The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouthfeel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavour (the characters in the cup), and aftertaste. Since coffee beans embody telltale flavours from the region where they were grown, cuppers may attempt to identify the coffee's origin.
 
-
-
-```
-Cool this code is going to work on the first try because that's what always happen when I code things.import React from 'react'
-
-import Content, { HTMLContent } from '../components/Content'
+```javascript{1,4-6}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
 ```
