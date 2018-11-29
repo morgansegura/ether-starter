@@ -47,31 +47,7 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 2048,
             },
-          },         
-        ],
-      },
-    },   
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {sh: `bash`, js: `javascript`, },
-              showLineNumbers: false,
-              noInlineHighlight: false,
-            },
-          },
-        ],
-      },
-    }, 
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
+          },   
           {
             resolve: "gatsby-remark-better-embed-video",
             options: {
@@ -83,9 +59,19 @@ module.exports = {
               showInfo: false // Optional: Hides video title and player actions.
             }
           },
-          `gatsby-remark-responsive-iframe`
-        ]
-      }
+          `gatsby-remark-responsive-iframe`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },                  
+        ],
+      },
     },      
     {
       resolve: 'gatsby-plugin-netlify-cms',
