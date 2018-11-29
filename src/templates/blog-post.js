@@ -117,6 +117,7 @@ export const pageQuery = graphql`
         title
         description
         featuredImage {
+          alt          
           image {
             childImageSharp {
               fluid(maxWidth: 1280, quality: 92) {
@@ -124,17 +125,16 @@ export const pageQuery = graphql`
               }
             }            
           }
-          alt
         }
         gallery {
+          alt
           image {
             childImageSharp {
               fluid(maxWidth: 1280, quality: 92) {
                 ...GatsbyImageSharpFluid
               }
             }            
-          }
-          alt            
+          }      
         }         
         tags
       }
