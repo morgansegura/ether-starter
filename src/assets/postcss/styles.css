@@ -14,6 +14,7 @@
 @import 'base/containers';
 @import 'base/buttons';
 @import 'base/forms';
+@import 'base/image';
 
 /* BEM Design Modules */
 @import 'modules/header';
@@ -24,4 +25,5 @@
 @import 'modules/product';
 @import 'modules/forms';
 @import 'modules/card';
+@import 'modules/post';
 @import 'modules/theme'; /* Keep this last-ish */

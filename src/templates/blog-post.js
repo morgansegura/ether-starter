@@ -12,7 +12,7 @@ export const BlogPostTemplate = ({
   contentComponent,
   description,
   featuredImage,
-  imageGallery,
+  gallery,
   tags,
   title,
   helmet,
@@ -24,14 +24,17 @@ export const BlogPostTemplate = ({
       {helmet || ''}
       <div className="container content">
         <PreviewCompatibleImage imageInfo={featuredImage} />
-        <div className="image__gallery__block">
-          {console.log(imageGallery)}
-          { !!imageGallery ? 
-            imageGallery.map((image, i) => (
-              <div className="image__gallery-image" key={i}>
-                <PreviewCompatibleImage imageInfo={image} /> 
-              </div>
-            ))
+        <div className="image__gallery__block row">
+          {console.log(gallery)}
+          {!!gallery ? 
+            gallery.map((image, i) => {
+              console.log(image)
+              return (
+                <div className="image__gallery__image col" key={i}>
+                  <PreviewCompatibleImage imageInfo={image} /> 
+                </div>
+              )
+            })
           : null }
         </div>
         <div className="columns">
@@ -65,7 +68,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   featuredImage: PropTypes.object,
-  imageGallery: PropTypes.object,
+  gallery: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }
@@ -80,7 +83,7 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         featuredImage={post.frontmatter.featuredImage}
-        imageGallery={post.frontmatter.imageGallery}
+        gallery={post.frontmatter.gallery}
         helmet={
           <Helmet
             titleTemplate="%s | Blog"

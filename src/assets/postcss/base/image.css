@@ -1,0 +1,28 @@
+.image__gallery {
+    &__block {
+        flex-wrap: wrap;
+
+    }
+    &__image {
+        align-items: stretch;
+    }
+}
+
+.stretch {
+    position: relative;
+
+
+    img {
+        position: asbolute;
+        left: 0;
+        top: 0;
+
+    }
+    &--center {
+
+    }
+}
+
+ .gatsby-image-wrapper {
+
+ }
