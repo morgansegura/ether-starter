@@ -8,13 +8,7 @@ description: >-
 featuredImage:
   alt: Coffee
   image: /img/products-grid2.jpg
-gallery:
-  - alt: Coffee Time
-    image: /img/products-grid3.jpg
-  - alt: Coffee time 2
-    image: /img/products-full-width.jpg
-  - alt: Coffee Beans
-    image: /img/products-grid1.jpg
+gallery: []
 tags:
   - flavor
   - tasting
