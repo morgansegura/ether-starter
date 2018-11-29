@@ -4,6 +4,7 @@
 /* Vendors (3rd Party) */
 @import 'vendors/normalize';
 @import 'vendors/bootstrap-grid.min.css'; /* Bootstrap4 grid and flexbox classes */
+@import 'vendors/prism-theme.css'; /* Bootstrap4 grid and flexbox classes */
 
 /* Base (Universally Shared) Styles */
 @import 'base/variables';

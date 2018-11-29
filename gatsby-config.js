@@ -47,10 +47,27 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 2048,
             },
+          },         
+        ],
+      },
+    },   
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {sh: `bash`, js: `javascript`, },
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
           },
         ],
       },
-    },
+    },     
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

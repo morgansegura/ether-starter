@@ -5,13 +5,13 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-// import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
-  // featuredImage,
+  featuredImage,
   imageGallery,
   tags,
   title,
@@ -23,16 +23,16 @@ export const BlogPostTemplate = ({
     <section className="section">
       {helmet || ''}
       <div className="container content">
-        {/*<PreviewCompatibleImage imageInfo={featuredImage} /> */}
+        <PreviewCompatibleImage imageInfo={featuredImage} />
         <div className="image__gallery__block">
           {console.log(imageGallery)}
-          { /*imageGallery !== null && imageGallery.length ? 
-            imageGallery.map((image, i) => {
+          { !!imageGallery ? 
+            imageGallery.map((image, i) => (
               <div className="image__gallery-image" key={i}>
                 <PreviewCompatibleImage imageInfo={image} /> 
               </div>
-            })
-          : null */}
+            ))
+          : null }
         </div>
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -113,7 +113,26 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-       
+        featuredImage {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1280, quality: 92) {
+                ...GatsbyImageSharpFluid
+              }
+            }            
+          }
+          alt
+        }
+        gallery {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1280, quality: 92) {
+                ...GatsbyImageSharpFluid
+              }
+            }            
+          }
+          alt            
+        }         
         tags
       }
     }
