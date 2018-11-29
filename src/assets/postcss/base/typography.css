@@ -39,3 +39,6 @@
 .capitalize {
     text-transform: capitalize;
 }
+.linethrough {
+    text-decoration: line-through;
+}

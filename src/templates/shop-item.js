@@ -5,9 +5,9 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import ShoppingCart from '../components/ShoppingCart'
-import { convertWholeDollarsToCents } from '../helpers.js';
 
 export const ShopItemTemplate = ({
+  id,
   content,
   contentComponent,
   price,
@@ -24,11 +24,11 @@ export const ShopItemTemplate = ({
 }) => {
   const ShopItemContent = contentComponent || Content
 
-  const priceDiscount = discount === null ? 0 : convertWholeDollarsToCents(discount)
-  price = price === 0 ? price : convertWholeDollarsToCents(price)
+  const priceDiscount = discount === null ? 0 : discount
   const savings = price - priceDiscount
 
   const product = {
+    id,
     title,
     description,
     color,
@@ -41,11 +41,14 @@ export const ShopItemTemplate = ({
     price,
     savings
   }
+  console.log(id)
 
   return (
     
     <section className="section product">
       {helmet || ''}
+
+
       <div className="container product__container">
         <div className="product__block">
           <ShoppingCart product={product} />
@@ -60,6 +63,7 @@ ShopItemTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  id: PropTypes.string,
   price: PropTypes.number,
   color: PropTypes.object,
   size: PropTypes.object,
@@ -83,7 +87,23 @@ const ShopItem = ({ data }) => {
         description={post.frontmatter.description}
         helmet={
           <Helmet
+            htmlAttributes={{ lang: 'en' }}
             titleTemplate="%s | Shop"
+            link={[{
+              href: "https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css",
+              rel: "stylesheet",
+              type: "text/css"
+            }]}
+            script={[{
+              type: 'text/javascript',
+              url: "",
+              id: "snipcart",
+              "data-api-key": "M2JmYjRiNDMtNmNlYi00NjdiLTk4ODYtODgwNTFlMTkwNjhkNjM2Nzg4MDQ4MjU3NDgxMDk0",
+              src: "https://cdn.snipcart.com/scripts/2.0/snipcart.js"
+            }, {
+              type: 'text/javascript',
+              src: "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+            }]}            
           >
             <title>{`${post.frontmatter.title}`}</title>
             <meta name="description" content={`${post.frontmatter.description}`} />
@@ -98,8 +118,9 @@ const ShopItem = ({ data }) => {
         color={post.frontmatter.color}
         size={post.frontmatter.size}
         details={post.frontmatter.details}
+        id={post.id}
+        
       />
-  
     </Layout>
   )
 }
@@ -114,9 +135,15 @@ export default ShopItem
 
 export const shopQuery = graphql`
   query ShopItemByID($id: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }    
     markdownRemark(id: { eq: $id }) {
       id
       html
+      excerpt
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

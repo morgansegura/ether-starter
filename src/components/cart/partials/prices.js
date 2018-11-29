@@ -11,20 +11,20 @@ const Prices = (props) => {
             props.product.priceDiscount > 0 ?
                 <div className="prices card__field d-flex align-items-center justify-content-between">
                     <div className="prices__original">
-                        <p className="label"><span className="b6">Originally:</span> ${convertCentsToWholeDollars(props.product.price)}</p>
+                        <p className="label linethrough"><span className="b6">Originally:</span> ${props.product.price}</p>
                     </div>
                     <div className="prices__discount">
-                        <p className="label"><span className="b6">New Price:</span> ${convertCentsToWholeDollars(props.product.priceDiscount)}</p>
+                        <p className="label"><span className="b6">New Price:</span> ${props.product.priceDiscount}</p>
                     </div>
                     <div className="prices__savings">
                         <p className="label"><span className="b6">Savings: </span> 
-                                <span>${convertCentsToWholeDollars(props.product.savings)} / {parseFloat(percent.toFixed(1))}% <small>per item</small></span>
+                                <span>${props.product.savings} / {parseFloat(percent.toFixed(1))}% <small>per item</small></span>
                         </p>
                     </div>
                 </div>
                 :
                     <div className="prices__original">
-                    <p className="label"><span className="b6">Price:</span> ${convertCentsToWholeDollars(props.product.price)}</p>
+                    <p className="label"><span className="b6">Price:</span> ${props.product.price}</p>
                 </div>
             }
         </div>

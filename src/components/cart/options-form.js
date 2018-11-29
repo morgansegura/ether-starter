@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import uuid from 'uuid/v4';
 import OptionField from './partials/optionField';
 import Prices from './partials/prices';
-import { pluralize, convertCentsToWholeDollars } from '../../helpers.js';
+import { pluralize } from '../../helpers.js';
 
 class OptionsForm extends Component {
     
@@ -101,9 +101,7 @@ class OptionsForm extends Component {
 
         return (
             <form className="form form__product" onSubmit={this.handleSubmit}>
-
                 <Prices state={this.state} product={this.props.product} />
-
                 <div className="card__field">
                     <p className="error">{this.state.error}</p>
                     <p className="label"><span className="b6">Quantity:</span> 
@@ -126,12 +124,8 @@ class OptionsForm extends Component {
                 </div>
                 }
 
-                <h4 className="t-center my-20">{`Add ${isNaN(this.state.amount) ? '__' : this.state.amount}, ${this.state.size}, ${this.state.color}, ${this.props.product.title}${pluralize(this.state.amount)} for $${isNaN(convertCentsToWholeDollars(this.state.price)) ? '__' : convertCentsToWholeDollars(this.state.price)} to your cart?`}</h4>                 
-                <div className="btn__block justify-content-end">
-                    <button className="btn btn--sm btn__sm-round btn__submit" type="submit" name="submit">
-                        Add to Cart
-                    </button>                    
-                </div>
+                <h4 className="t-center my-20">{`Add ${isNaN(this.state.amount) ? '__' : this.state.amount}, ${this.state.size}, ${this.state.color}, ${this.props.product.title}${pluralize(this.state.amount)} for $${isNaN(this.state.price) ? '__' : this.state.price} to your cart?`}</h4>
+
             </form>
         );
 

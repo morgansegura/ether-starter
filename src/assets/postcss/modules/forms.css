@@ -79,12 +79,15 @@ label {
 .btn__submit {
     background-color: black;
     color: white;
+    font-weight: 400;
     margin-top: .65rem;
 
     &:hover {
+        color: white;
         background-color: google-color(grey, 900);
     }
     &:active {
+        color: white;
         background-color: google-color(grey, 800);
     }
 }
