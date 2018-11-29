@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import uuid from 'uuid/v4';
-import moment from 'moment';
+// import moment from 'moment';
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import OptionsForm from './options-form';
 
@@ -69,7 +69,7 @@ class OptionsFormContainer extends Component {
                     /> 
                     <div className="btn__block justify-content-end">
                         <a
-                            href="#"
+                            href="/"
                             className="snipcart-add-item buyBtn btn btn--sm btn__sm-round btn__submit"
                             data-item-id={this.props.product.id}
                             data-item-price={this.props.product.priceDiscount !== null ? this.props.product.priceDiscount : this.props.product.price }

@@ -37,7 +37,7 @@ const OptionField = (props) => {
                     defaultValue={props.product.color.color[0]}
                     className="my-5"
                 >
-                    {props.product.color.color.map((c, i) => (
+                    {props.product.color.map((c, i) => (
                         <option key={i} name="color" value={c.color}>{c.color}</option>
                     ))}
                 </select>            

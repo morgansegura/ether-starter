@@ -1,10 +1,10 @@
 import React from 'react';
-import { convertCentsToWholeDollars } from '../../../helpers.js';
+// import { convertCentsToWholeDollars } from '../../../helpers.js';
 
 const Prices = (props) => {
     console.log(props)
     let percent = props.product.savings / props.product.price * 100
-    let percentPlus = ((props.state.savings / props.state.price) * props.state.amount) * 100
+    // let percentPlus = ((props.state.savings / props.state.price) * props.state.amount) * 100
     return (
         <div>
         {
