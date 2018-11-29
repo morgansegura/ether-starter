@@ -15,6 +15,8 @@ gallery:
     image: /img/products-full-width.jpg
   - alt: Coffee Beans
     image: /img/products-grid1.jpg
+  - image: /img/6a.jpg
+  - image: /img/tutorials.png
 tags:
   - flavor
   - tasting
