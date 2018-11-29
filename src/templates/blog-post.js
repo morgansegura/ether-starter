@@ -5,11 +5,14 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
+  featuredImage,
+  imageGallery,
   tags,
   title,
   helmet,
@@ -20,6 +23,17 @@ export const BlogPostTemplate = ({
     <section className="section">
       {helmet || ''}
       <div className="container content">
+        {/*<PreviewCompatibleImage imageInfo={featuredImage} /> */}
+        <div className="image__gallery__block">
+          {console.log(imageGallery)}
+          { /*imageGallery !== null && imageGallery.length ? 
+            imageGallery.map((image, i) => {
+              <div className="image__gallery-image" key={i}>
+                <PreviewCompatibleImage imageInfo={image} /> 
+              </div>
+            })
+          : null */}
+        </div>
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
@@ -50,6 +64,8 @@ BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  featuredImage: PropTypes.object,
+  imageGallery: PropTypes.object,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }
@@ -63,6 +79,8 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        featuredImage={post.frontmatter.featuredImage}
+        imageGallery={post.frontmatter.imageGallery}
         helmet={
           <Helmet
             titleTemplate="%s | Blog"
@@ -95,6 +113,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+       
         tags
       }
     }
