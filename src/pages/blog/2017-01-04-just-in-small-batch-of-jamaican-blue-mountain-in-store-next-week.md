@@ -10,7 +10,7 @@ tags:
   - green beans
   - flavor
   - tasting
-topics: food
+topics: 'food, balls'
 ---
 
 We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.
