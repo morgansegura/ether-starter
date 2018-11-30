@@ -15,6 +15,7 @@ gallery:
 tags:
   - brewing
   - chemex
+categories: chemex
 ---
 ![chemex](/img/chemex.jpg)
 
