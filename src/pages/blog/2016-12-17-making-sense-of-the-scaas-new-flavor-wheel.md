@@ -23,7 +23,7 @@ tags:
   - flavor
   - tasting
   - yum
-category: food
+categories: food
 ---
 
 ![flavor wheel](/img/flavor_wheel.jpg)
