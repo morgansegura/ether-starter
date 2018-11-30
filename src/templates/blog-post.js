@@ -23,10 +23,13 @@ export const BlogPostTemplate = ({
     <section className="section">
       {helmet || ''}
       <div className="container content">
+      {!!featuredImage ? 
         <PreviewCompatibleImage imageInfo={featuredImage} />
+        : null
+      }
         <div className="image__gallery__block row">
           {console.log(gallery)}
-          {!!gallery ? 
+          {gallery ? 
             gallery.map((image, i) => {
               console.log(image)
               return (
