@@ -6,8 +6,8 @@ description: >-
   The Coffee Taster’s Flavor Wheel, the official resource used by coffee
   tasters, has been revised for the first time this year.
 featuredImage:
-  alt: 'hello'
-  image: '/img/products-grid1.jpg'
+  alt: hello
+  image: /img/products-grid1.jpg
 gallery:
   - alt: Coffee Time
     image: /img/products-grid3.jpg
@@ -23,6 +23,7 @@ tags:
   - flavor
   - tasting
   - yum
+category: food
 ---
 
 ![flavor wheel](/img/flavor_wheel.jpg)
