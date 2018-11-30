@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "author": "Morgan Segura",
   "dependencies": {
+    "add": "^2.0.6",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.10",
+    "gatsby-plugin-categories": "^1.2.0",
     "gatsby-plugin-netlify": "^2.0.0",
     "gatsby-plugin-netlify-cms": "^3.0.0",
     "gatsby-plugin-react-helmet": "^3.0.0",
@@ -30,7 +32,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "yarn": "^1.12.3"
   },
   "keywords": [
     "gatsby"

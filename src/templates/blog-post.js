@@ -14,6 +14,7 @@ export const BlogPostTemplate = ({
   featuredImage,
   gallery,
   tags,
+  topics,
   title,
   helmet,
 }) => {
@@ -23,15 +24,14 @@ export const BlogPostTemplate = ({
     <section className="section">
       {helmet || ''}
       <div className="container content">
-      {!!featuredImage ? 
+      {!!featuredImage && featuredImage.length ? 
         <PreviewCompatibleImage imageInfo={featuredImage} />
         : null
       }
         <div className="image__gallery__block row">
           {console.log(gallery)}
-          {gallery ? 
+          {gallery && gallery.length ? 
             gallery.map((image, i) => {
-              console.log(image)
               return (
                 <div className="image__gallery__image col" key={i}>
                   <PreviewCompatibleImage imageInfo={image} /> 
@@ -47,6 +47,25 @@ export const BlogPostTemplate = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
+            <p></p>
+            {!!topics && topics.length ? (
+              <div style={{ marginTop: `4rem` }}>
+                <h4>topics</h4>
+                <Link to={`/topics/${kebabCase(topics)}/`}>{topics}</Link>
+              </div>
+            ) : null}
+            {/*!!categories && categories.length ? (
+              <div style={{ marginTop: `4rem` }}>
+                <h4>categories</h4>
+                <ul className="taglist">
+                  {categories.map(cat => (
+                    <li key={cat + `cat`}>
+                      <Link to={`/categories/${kebabCase(cat)}/`}>{cat}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null*/}
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -71,6 +90,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   featuredImage: PropTypes.object,
+  topics: PropTypes.string,
   gallery: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
@@ -96,6 +116,7 @@ const BlogPost = ({ data }) => {
           </Helmet>
         }
         tags={post.frontmatter.tags}
+        topics={post.frontmatter.topics}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -119,6 +140,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        topics
         featuredImage {
           alt          
           image {
@@ -142,5 +164,6 @@ export const pageQuery = graphql`
         tags
       }
     }
+    
   }
 `
