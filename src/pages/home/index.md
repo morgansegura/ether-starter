@@ -1,7 +1,7 @@
 ---
 templateKey: home-page
 title: Home is where the beans are
-date: '2018-11-29T00:00:00-08:00'
+date: 2018-12-14T20:50:00.000Z
 yoast_keyword: 'home '
 description: cool beans
 ---
