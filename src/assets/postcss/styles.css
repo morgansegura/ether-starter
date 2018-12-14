@@ -1,6 +1,3 @@
-/* Fonts */
-@import 'https://fonts.googleapis.com/css?family=Norican|Arvo|Fjalla+One|Source+Sans+Pro:300,400,600,700,900';
-
 /* Vendors (3rd Party) */
 @import 'vendors/normalize';
 @import 'vendors/bootstrap-grid.min.css'; /* Bootstrap4 grid and flexbox classes */

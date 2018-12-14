@@ -6179,6 +6179,11 @@ gatsby-plugin-categories@^1.2.0:
   dependencies:
     lodash "^4.17.10"
 
+gatsby-plugin-google-fonts@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-0.0.4.tgz#dc1402a71f27c3ae6caee10777d10adadf74bd7c"
+  integrity sha512-B9Q+dznk6UX2Fe7QyCTptiuLT+ZLtdFBs1lg5kvaVDyIlesEA2rSQqtB7IkEQflH91JPE4eAEM699JCPy7CFGg==
+
 gatsby-plugin-netlify-cms@^3.0.0:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-3.0.7.tgz#d5da2b65611667cae7ca01d49fe8d4df0944a639"
@@ -9689,6 +9694,11 @@ netlify-cms-widget-text@^2.0.5:
   resolved "https://registry.yarnpkg.com/netlify-cms-widget-text/-/netlify-cms-widget-text-2.0.5.tgz#82273f3a62f1522a8c5f841c4d9397e914469801"
   dependencies:
     react-textarea-autosize "^5.2.0"
+
+netlify-cms-yoast-seo@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/netlify-cms-yoast-seo/-/netlify-cms-yoast-seo-1.0.5.tgz#01fc5ac500c1f38ac3f0ae20e57226c74d67ed2a"
+  integrity sha512-nlIDVqtNOO2OUiicVcO+wUxXSHSiwEAgUtt8iUdxJoEb4uq6K6ZPcq8ZoWGqhkUmdHcx3WriljXm6p+zqBRi7g==
 
 netlify-cms@^2.1.1:
   version "2.1.3"

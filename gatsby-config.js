@@ -72,7 +72,18 @@ module.exports = {
           },                  
         ],
       },
-    },      
+    }, 
+    // SEO Smart
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `norican`,
+          `fjalla one`,
+          `source sans pro\:300,400,600,700,900`
+        ]
+      }
+    },       
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

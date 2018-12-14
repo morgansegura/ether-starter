@@ -54,18 +54,7 @@ export const BlogPostTemplate = ({
                 <Link to={`/topics/${kebabCase(topics)}/`}>{topics}</Link>
               </div>
             ) : null}
-            {/*!!categories && categories.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>categories</h4>
-                <ul className="taglist">
-                  {categories.map(cat => (
-                    <li key={cat + `cat`}>
-                      <Link to={`/categories/${kebabCase(cat)}/`}>{cat}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null*/}
+
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>

@@ -17,7 +17,11 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Focus Keyword", name: "yoast_keyword", widget: "string" }
+      - { label: "Meta Description", name: "description", widget: "string" }
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
@@ -35,33 +39,52 @@ collections:
           ]
         }    
       - {label: "Body", name: "body", widget: "markdown"}
-
-
   - name: "pages"
     label: "Pages"
     create: false
-    ditor: true
+    editor: true
     files:
       - file: "src/pages/home/index.md"
         label: "Home Page"
         name: "home"  
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-          - {label: Title, name: title, widget: string"}
-          - {label: "Body", name: "body", widget: "markdown"}    
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - { label: "Focus Keyword", name: "focus_keyword", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "string" }
+          - {label: Hero Slider, name: gallery, widget: list, required: false,
+              fields: [
+                {label: Image, name: image, widget: image},
+                {label: Alt, name: alt, widget: string}
+              ]
+            }                    
+          - { label: "Body", name: "body", widget: "markdown" }
+
+
+
+
+
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Focus Keyword", name: "yoast_keyword", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "string" }
       - file: "src/pages/pricing/index.md"
         label: "Pricing Page"
         name: "pricing"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pricing-page"}
-          - {label: Title, name: title, widget: string}
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Focus Keyword", name: "yoast_keyword", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "string" }
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
