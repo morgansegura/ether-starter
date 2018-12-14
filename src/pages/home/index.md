@@ -1,9 +1,9 @@
 ---
 templateKey: home-page
-title: Home is where the beans are
+title: Home is where the beans are home
 date: 2018-12-14T20:50:00.000Z
 yoast_keyword: 'home '
-description: cool beans
+description: home cool beans
 ---
 ### Shade-grown coffee
 Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
