@@ -7,8 +7,8 @@ meta_description: >-
   a pleasant-smelling, colorless, volatile liquid that is highly flammable. It
   is used as an anesthetic and as a solvent or intermediate in industrial
   processes.
-gallery:
-  - alt: Ether image 1
-    image: /img/products-grid2.jpg
+hero_gallery:
+  - alt: This was added inside of the admin
+    image: /img/products-full-width.jpg
 ---
 ###
