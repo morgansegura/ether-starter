@@ -9,6 +9,309 @@ public_folder: images
 display_url: https://google.com
 
 collections:
+  # Settings Section
+  - name: 'settings'
+    label: 'Site Settings'
+    slug: '{{slug}}'
+    files:
+      # Site Settings (Logo and Menu)
+      - file: 'src/pages/settings/index.md'
+        label: 'General Settings'
+        name: 'settings-index'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'settings',
+            }
+          - {
+              label: 'Show Splash Page',
+              name: 'home-or-spash',
+              widget: 'boolean',
+              hint: 'If unchecked the home page will shown in place of the splash page.',
+              default: false,
+            }
+          - {
+              label: 'Override Metadata',
+              name: 'meta',
+              widget: 'object',
+              fields:
+                [
+                  {
+                    label: 'Title',
+                    name: 'title',
+                    widget: 'string',
+                    hint: 'This title will be displayed in the <head> of your website.',
+                  },
+                  {
+                    label: 'Meta Keywords',
+                    name: 'keywords',
+                    widget: 'string',
+                    hint: 'Create strong meta keywords for your main page.',
+                  },
+                  {
+                    label: 'Meta Description',
+                    name: 'description',
+                    widget: 'string',
+                    hint: 'Create a good meta description for your main page.',
+                  },
+                ],
+            }
+          - {
+              label: 'Custom Styles',
+              name: 'css',
+              widget: 'object',
+              fields:
+                [
+                  {
+                    label: 'CSS',
+                    name: 'styles',
+                    widget: 'text',
+                    hint: "Here you can add your own custom CSS. This will override default styles but not admin inputs. You don't need <style> tags!",
+                  },
+                ],
+            }
+
+      # Header Settings
+      - file: 'src/pages/settings/header.md'
+        label: 'Header Settings'
+        name: 'settings-header'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'settings',
+            }
+          - {
+              label: 'Header Menu',
+              name: 'menuHeader',
+              widget: 'object',
+              required: false,
+              fields:
+                [
+                  {
+                    label: 'Menu Items',
+                    name: 'menuItems',
+                    widget: 'list',
+                    fields:
+                      [
+                        {
+                          label: 'Label',
+                          name: 'label',
+                          widget: 'string',
+                          hint: 'The visible text in this link.',
+                        },
+                        {
+                          label: 'Link Title',
+                          name: 'linkTitle',
+                          widget: 'string',
+                          hint: 'The title attribute.',
+                        },
+                        {
+                          label: 'Link Type',
+                          name: 'linkType',
+                          widget: 'select',
+                          options: ['internal', 'external'],
+                          hint: 'Choose between internal and external.',
+                        },
+                        {
+                          label: 'Link URL',
+                          name: 'linkURL',
+                          widget: 'string',
+                          hint: 'Use a relative URL (e.g. /about) if the link is an internal link. Otherwise, (e.g. https://google.com)',
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: 'Logo',
+              name: 'logoImage',
+              widget: 'object',
+              fields:
+                [
+                  {
+                    label: 'Image',
+                    name: 'image',
+                    widget: 'image',
+                    hint: 'Upload an image. Leave blank to display text.',
+                  },
+                  {
+                    label: 'Image Description',
+                    name: 'imageAlt',
+                    widget: 'string',
+                    hint: '(SEO) The Alt tage for this image.',
+                  },
+                  {
+                    label: 'Image Width',
+                    name: 'imageWidth',
+                    widget: 'number',
+                    default: 40,
+                    valueType: 'int',
+                    hint: 'The width of your logo in the header in pixels. Default: 40px',
+                  },
+                  {
+                    label: 'Image Label',
+                    name: 'imageLabel',
+                    widget: 'string',
+                    hint: 'This text will show up if there is no image.',
+                  },
+                  {
+                    label: 'Location Desktop',
+                    name: 'locationDesktop',
+                    widget: 'select',
+                    options: ['left', 'center', 'right'],
+                    default: 'left',
+                    hint: 'Location of the logo in the header (Desktop).',
+                  },
+                  {
+                    label: 'Location Mobile',
+                    name: 'locationMobile',
+                    widget: 'select',
+                    options: ['left', 'center', 'right'],
+                    default: 'center',
+                    hint: 'Location of the logo in the header (Mobile).',
+                  },
+                ],
+            }
+          - {
+              label: 'Header Settings',
+              name: 'header',
+              widget: 'object',
+              required: false,
+              fields:
+                [
+                  {
+                    label: 'Background Color',
+                    name: 'bgColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'white',
+                    hint: 'Adjust the background-color of the <footer> area.',
+                  },
+                  {
+                    label: 'Text Color',
+                    name: 'textColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'black',
+                    hint: 'Adjust the font color.',
+                  },
+                  {
+                    label: 'Link Color',
+                    name: 'linkColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'blue',
+                    hint: 'Adjust the link color.',
+                  },
+                  {
+                    label: 'Link Hover Color',
+                    name: 'linkHoverColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'teal',
+                    hint: 'Adjust the link color.',
+                  },
+                ],
+            }
+
+      # Footer Settings
+      - file: 'src/pages/settings/footer.md'
+        label: 'Footer Settings'
+        name: 'settings-footer'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'settings',
+            }
+          - {
+              label: 'Footer Menu',
+              name: 'menuFooter',
+              widget: 'object',
+              fields:
+                [
+                  {
+                    label: 'Menu Items',
+                    name: 'menuItems',
+                    widget: 'list',
+                    fields:
+                      [
+                        {
+                          label: 'Label',
+                          name: 'label',
+                          widget: 'string',
+                          hint: 'The visible text in this link.',
+                        },
+                        {
+                          label: 'Link Title',
+                          name: 'linkTitle',
+                          widget: 'string',
+                          hint: 'The title attribute.',
+                        },
+                        {
+                          label: 'Link Type',
+                          name: 'linkType',
+                          widget: 'select',
+                          options: ['internal', 'external'],
+                          hint: 'Choose between internal and external.',
+                        },
+                        {
+                          label: 'Link URL',
+                          name: 'linkURL',
+                          widget: 'string',
+                          hint: 'Use a relative URL (e.g. /about) if the link is an internal link. Otherwise, (e.g. https://google.com)',
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: 'Footer',
+              name: 'footer',
+              widget: 'object',
+              required: false,
+              fields:
+                [
+                  {
+                    label: 'Background Color',
+                    name: 'bgColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'white',
+                    hint: 'Adjust the background-color of the <footer> area.',
+                  },
+                  {
+                    label: 'Text Color',
+                    name: 'textColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'black',
+                    hint: 'Adjust the font color.',
+                  },
+                  {
+                    label: 'Link Color',
+                    name: 'linkColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'blue',
+                    hint: 'Adjust the link color.',
+                  },
+                  {
+                    label: 'Link Hover Color',
+                    name: 'linkHoverColor',
+                    widget: 'color',
+                    presets: ['red', 'green', 'blue'],
+                    default: 'teal',
+                    hint: 'Adjust the link color.',
+                  },
+                ],
+            }
+
   - name: 'post'
     label: 'Post'
     folder: 'src/pages/post'
