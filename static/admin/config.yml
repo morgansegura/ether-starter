@@ -29,7 +29,7 @@ collections:
 
   - name: 'page'
     label: 'Page'
-    folder: 'src/pages/custom'
+    folder: 'src/pages'
     create: true
     slug: '{{slug}}'
     fields:
