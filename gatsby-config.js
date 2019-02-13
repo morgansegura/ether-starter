@@ -138,6 +138,15 @@ module.exports = {
         develop: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        manualInit: false,
+        enableIdentityWidget: true,
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        htmlTitle: `Content Manager`,
+      },
+    },
     'gatsby-plugin-netlify',
   ],
 }
