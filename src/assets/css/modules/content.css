@@ -1,0 +1,16 @@
+	/* Content
+	--------------------------------------------- */
+
+	.content {
+		width: 65%;
+	}
+
+	.sidebar-content .content {
+	}
+
+	.full-width-content .content,
+	.landing-page .content {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}

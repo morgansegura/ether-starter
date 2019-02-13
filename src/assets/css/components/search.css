@@ -1,0 +1,88 @@
+.search {
+
+    .trigger__close {
+
+    }
+    &__form-container {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        input:focus + .search__icon svg {
+            color: $cta;
+        }     
+    }
+    &__icon {
+        cursor: text;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 11px;
+        transform: rotate(0);
+        transition: all .3s ease-out;
+        z-index: 100;
+        right: 11px;
+
+        svg {
+            font-size: 24px;
+            color: google-color(grey, 400);
+        }
+        &:hover {}
+        &:active {}
+    }
+    &__term {
+        position: relative;
+        color: google-color(grey, 500);
+        font-weight: 300;
+        padding: 15px;
+        border: 10px solid color(google-color(grey, 400) l(75%));
+        box-shadow: inset 1px 1px 0 color(google-color(grey, 400) l(80%)), inset -1px -1px 0 color(google-color(grey, 400) l(80%));
+        width: 100%;
+        box-sizing: border-box;
+        transition: all .3s ease-in-out;
+
+        &.is--focussed {
+            border-color: color($cta a(.5));
+            box-shadow: inset 1px 1px 0 color($cta a(.7)), inset -1px -1px 0 color($cta a(.7));
+        }
+    }
+    &__results {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ::placeholder {
+        color: google-color(grey, 400);
+        font-weight: 500;
+        opacity: 1;    
+        transition: all .3s ease-out; 
+    }
+    .is--focussed::placeholder {
+        color: google-color(grey, 200);
+    }
+}
+.search__results-div {
+    .general-results {
+
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    .btn {
+        background-color: google-color(grey, 400);
+        color: google-color(grey, 50);
+        padding: .25rem .5rem;
+        display: inline-block;
+
+        text-decoration: none;
+        font-size: 0.75rem;
+        border-radius: 3px;
+    }
+} 

@@ -1,0 +1,10 @@
+.img {
+
+    &--background {
+        
+    }
+    &--fluid {
+        display: block;
+        max-width: 100%;
+    }    
+}

@@ -1,0 +1,275 @@
+/* Menu Font Styles */
+.nav__header .nav__primary,
+.nav__header .nav__secondary {
+    font-family: $sans-secondary;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex; 
+
+    @mixin atMedium {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        align-items: center;                 
+    } 
+}
+
+.nav__header .nav__primary {
+    flex-direction: column;
+    order: 2;
+    font-size: 18px;
+
+    & .nav__item {
+        padding-bottom: 10px;
+        
+        &:hover {
+            
+        }
+        &:active {
+
+        }
+    }
+
+    @mixin atMedium {
+        font-size: 16px;        
+        justify-content: space-evenly;
+        flex-direction: row;
+        border: solid google-color(grey, 200);   
+        border-width: 0 1px;
+
+        & .nav__item {
+            padding-bottom: 0;
+            
+            &:hover {
+                
+            }
+            &:active {
+
+            }
+        }        
+    }
+    @mixin atLarge {
+        font-size: 18px;
+    }   
+}
+.nav__header .nav__secondary {
+
+    justify-content: space-evenly;
+
+    margin-bottom: 15px;
+    padding: 15px 0;
+    border: solid google-color(grey, 300);
+    border-width: 1px 0;
+    order: 1;
+
+    & .iconify {
+        font-size: 24px;
+    } 
+
+    @mixin atMedium {
+        order: 2;
+        padding: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        border: none;
+        & .iconify {
+            font-size: 20px;
+        }        
+    }
+    @mixin atLarge {
+
+        & .iconify {
+            font-size: 24px;
+        }                   
+    }     
+}
+
+/* Header Navigation */
+.nav__header {
+    height: 100vh;
+    width: 280px;
+    padding-top: 75px;    
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    
+
+    /* Mobile Styles */
+    .mobile-nav--is-open & { 
+        right: 0;
+        transition: right .3s ease-out;
+        box-shadow: -5px 0px 5px rgba(0, 0, 0, .1);
+        border-left: 1px solid google-color(grey, 300);        
+        background-color: google-color(grey, 200);
+
+        @mixin atMedium {
+            box-shadow: none;
+            background-color: transparent;
+        }
+    }
+    .mobile-nav--is-closed & { 
+        right: -300px;
+        background-color: transparent;
+        box-shadow: none;
+        transition: all .3s ease-out;
+    }
+
+    @mixin atMedium {
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        height: auto;
+        padding-top: 0;
+        position: relative;
+        box-shadow: none;
+        transition: none;
+
+        .mobile-nav--is-open & { 
+            right: 0;
+            transition: none;   
+        }  
+        .mobile-nav--is-closed & { 
+            right: 0;
+            transition: none;      
+        }                    
+    }
+
+    &__inner { 
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transition: none;        
+
+        .mobile-nav--is-open & {  
+            opacity: 1;
+            visibility: visible;
+        }   
+
+        @mixin atMedium {
+            top: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            opacity: 1;
+            visibility: visible;
+            padding-left: 1rem;                
+        }
+    } 
+
+    & .nav__item {   
+        font-weight: 400;
+        padding-left: 5px;
+        padding-right: 5px;
+        transition: all .3s ease-out;
+
+        /* background-color: color(google-color(grey, 400) lightness);
+        &.active {
+            color: white;
+            background-color: color($base-bg-color lightness(37%));
+        }
+        &:hover {
+            color: color($base-font-color-light lightness(78%));
+            background-color: color($base-bg-color lightness(43%));
+        }
+        &:active {
+            color: white;
+        }        */
+    }    
+}
+
+
+.nav__header__trigger {
+    position: fixed;
+    display: none; 
+    top: 28px;   
+    right: 20px;
+    cursor: pointer;
+    width: 35px;
+    height: 16px;
+    transition: top .3s ease-out;
+
+    &--inner, &::before, &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: google-color(grey, 900);
+        border-radius: 30px;
+        left: 0;
+        transition: all .3s ease-out;
+        transform-origin: 100% 0;
+    }
+    &--inner {
+        top: 8px;
+    }    
+    &::before {
+        top: 0;
+    }
+    &::after {
+        top: 100%;
+    }
+
+    &:hover {
+        .nav__header__trigger--inner, 
+        &::before, 
+        &::after {
+            background-color: google-color(grey, 700);
+        }
+    }
+    .is--mobile-nav & {
+        display: block;
+    }  
+    .mobile-nav--is-open & {
+
+    }  
+    @mixin atMedium {
+        .is--mobile-nav & {
+            display: none;
+        }         
+    }
+}
+
+.mobile-nav--is-open {
+    & .nav__header__trigger {
+        &--inner, 
+        &::before, 
+        &::after {
+            background-color: google-color(grey, 700);
+        }        
+        &--inner {
+            top: 100%;            
+            transform:  rotate(40deg) 
+                        scaleX(.75) 
+                        translateX(0)
+                        translateY(-10%);
+        }    
+        &::before {
+            transform:  rotate(90deg) 
+                        scaleX(.5) 
+                        translateX(100%)
+                        translateY(0);
+        }
+        &::after {
+            transform:  rotate(0) 
+                        scaleX(.5) 
+                        translateX(0)
+                        translateY(0);
+        }
+        &:hover {
+            .nav__header__trigger--inner, 
+            &::before, 
+            &::after {
+                background-color: google-color(grey, 500);
+            }
+        }        
+    }
+}
+
+.nav__secondary {
+
+}
+.nav__footer {
+
+}

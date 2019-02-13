@@ -1,0 +1,116 @@
+#overlay__results {
+    position: relative;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+
+    &--is-visible {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        transition: opacity .4s ease-in;        
+    }
+    &--not-visible {
+        transition: all .6s ease-out;
+    }
+
+    &__top {
+        padding: 30px 0;
+    }
+
+    &__dark {
+        background: color($main-black a(90%));  
+        .modal {
+            background-color: google-color(grey, 50);
+            header {
+                border-bottom: 1px solid google-color(grey, 200);
+            }
+        }       
+        .trigger__close {
+          color: google-color(grey, 200);
+
+          &:hover {
+            color: google-color(grey, 600);              
+          }            
+          &:active {
+
+          }            
+        }         
+    }
+    &__light {
+        background: linear-gradient(color(white a(98%)), color(white a(90%)));
+
+        .modal {
+            background-color: white;
+            box-shadow: 1px 1px 20px google-color(grey, 200), -1px -1px 20px google-color(grey, 200);
+            border: 1px solid google-color(grey, 300);
+        }        
+        .trigger__close {
+          color: google-color(grey, 400);
+
+          &:hover {
+            color: google-color(grey, 700);
+          }
+          &:active {
+            color: google-color(grey, 600);
+          }
+        } 
+    }
+    .trigger__close {
+        z-index: 100;
+        opacity: 1;
+        visibility: visible;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+        transition: all .3s ease-out;
+
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 25px;
+        right: 15px;
+        text-align: center;
+    }
+}
+.modal {
+    padding: 10px 20px 15px 20px;
+    border-radius: 3px;
+    margin: 0 auto;    
+    max-width: 300px;
+
+    @mixin atSmall {
+        max-width: 450px;
+    }
+    @mixin atMedium {
+        max-width: 750px;
+    }
+
+    header {
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        font-family: $sans-secondary;
+        font-weight: 800;
+
+        .trigger__close {
+            align-self: flex-start;
+            text-align: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all .3s ease-out;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+.t {
+    &-center {
+        text-align: center;
+    }
+    &-justify {
+        text-align: justify;
+    }
+    &-left {
+        text-align: left;
+    }
+    &-right {
+        text-align: right;
+    }
+    &-highlight {
+        &--cta {
+            color: $cta;
+        }
+    }    
+}
+
+.b {
+    @for $b from 3 to 9 {
+        &$(b) {
+        font-weight: $(b)00;   
+        }     
+    }    
+}
+
+.c {
+    &--white {
+        color: #fff;
+    }
+}
+
+.sans {
+    font-family: $sans-primary;
+}
+.sans-secondary {
+    font-family: $sans-secondary;
+}
+.serif {
+    /* font-family: $serif-primary; */
+}
+.cursive {
+    font-family: $cursive;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+.linethrough {
+    text-decoration: line-through;
+}
+
+.h1 {
+    font-size: 40px;
+}
+.h2 {
+    font-size: 36px;
+}
+.h3 {
+    font-size: 32px;
+}
+.h4 {
+    font-size: 28px;
+}
+.h5 {
+    font-size: 24px;
+}
+.h6 {
+    font-size: 20px;
+}
+
+.hr {
+    display: flex;
+    align-items: center;    
+    height: 10px;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        border-radius: 30px;
+        background-color: $main-black;
+    }
+    &--light {
+        &::before {
+            background-color: google-color(grey, 400);
+        }        
+    }
+    @for $h from 1 to 60 {
+        &-$(h) {
+            &::before {            
+                height: $(h)px;
+            }
+        }
+    }
+}
+
+.h1, .h2, .h3, 
+.h4, .h5, .h6,
+p {
+    
+}
+
+.fs {
+    @for $b from 10 to 60 {
+        &-$(b) {
+        font-size: $(b)px;
+        }     
+    }    
+}
+.kern {
+    &-plus {
+        &-1 {
+            letter-spacing: 1px;
+        }        
+    }
+}

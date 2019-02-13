@@ -1,0 +1,64 @@
+/* Fonts */
+$sans-primary: 'Rubik', sans-serif;
+$sans-secondary: 'Ubuntu Condensed', sans-serif;
+$cursive: 'Norican', cursive;
+
+/* Shades */
+$main-black: #181a1e;
+$main-white: #ededed;
+$main-gray: #4a4a4a;
+$main-gray-light: #a9a9a9;
+
+$main-base-color-body: #f2f5fa;
+$main-base-color-text: #6978a6;
+$main-base-color-cta: #6088cc;
+$main-base-color: #1f3161;
+$main-base-color-dark: #1d2c57;
+$main-base-color-darker: #19274e;
+
+/* Social Colors */
+$facebook-blue: #4267b2;
+$instagram-grey: #231F20;
+$yelp-red: #D32323;
+
+$theme-red: #ff5f57;
+$theme-blue: #5bbad5;
+$theme-purple: #4e394c;
+
+/* Theme Colors */
+$cta: #ff5f57;
+
+
+$highlighter-yellow: yellow;
+$highlighter-pink: pink;
+$highlighter-green: green;
+$highlighter-blue: blue;
+$highlighter-purple: purple;
+$highlighter-orange: orange;
+
+
+/* Alt Colors */
+
+/* Dimensions */
+$atSmallest: 320px;
+$atSmall: 576px;
+$atMedium: 768px;
+$atLarge: 992px;
+$atLargest: 1200px;
+
+/* Padding, Margin defaults */
+$pad: 15px;
+$pad-sm: 30px;
+$pad-md: 60px;
+$pad-lg: 90px;
+$pad-xl: 120px;
+
+/* Setup Baseline.css elements */
+$base-font-size: 1rem;
+$base-font-family: $sans-primary;
+$base-font-weight: 400;
+$base-font-height: 1.7;
+$base-font-color: $main-gray;
+$base-font-color-light: $main-base-color-text;
+$base-bg-color: google-color(grey, 50);
+$base-transition: all .3s ease-out;

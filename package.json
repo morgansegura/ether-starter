@@ -1,0 +1,68 @@
+{
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "@mdi/font": "^3.2.89",
+    "gatsby": "^2.0.119",
+    "gatsby-image": "^2.0.29",
+    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-offline": "^2.0.23",
+    "gatsby-plugin-purgecss": "^2.4.0",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-sharp": "^2.0.20",
+    "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-transformer-sharp": "^2.1.13",
+    "netlify-cms": "^2.4.2",
+    "prop-types": "^15.7.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "concurrently \"rimraf .cache public localStorage\" \"gulp cssInject\" \"gulp admincssInject\" \"npm run clean\" \"gatsby build\"",
+    "develop": "concurrently \"rimraf .cache public localStorage\" \"gulp watch\" \"npm run clean\" \"gatsby develop\"",
+    "clean": "rimraf .cache public",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "css-declaration-sorter": "^4.0.1",
+    "dotenv": "^6.2.0",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^1.1.1",
+    "gulp-watch": "^5.0.1",
+    "postcss-color-function": "^4.0.1",
+    "postcss-conditionals": "^2.1.0",
+    "postcss-for": "^2.1.1",
+    "postcss-google-color": "^2.0.1",
+    "postcss-import": "^12.0.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^4.1.0",
+    "postcss-pixels-to-rem": "^0.8.0",
+    "postcss-preset-env": "^6.1.1",
+    "postcss-processor-order": "^0.1.1",
+    "postcss-simple-vars": "^5.0.1",
+    "prettier": "^1.15.2",
+    "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

@@ -1,0 +1,38 @@
+.footer {
+  background: $main-black url('images/bg-pattern-dark.png') 0 0 repeat;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  color: #919191;
+
+  @mixin atMedium {
+    padding-top: 85px;
+  }
+
+  & .heading {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: $sans-secondary;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__info {
+    padding-bottom: 30px;
+  }
+
+  & .nav__primary {
+    display: flex;
+  }
+
+  &__widget {
+    padding-bottom: 30px;
+  }
+  .widget_media_image {
+    width: 90px;
+
+    @mixin atLarge {
+      width: 125px;
+    }
+  }
+}
