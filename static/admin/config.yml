@@ -44,22 +44,22 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
-  # Create Theme Pages
-  # - name: 'static'
-  #   label: 'Prebuilt Pages'
-  #   files:
-  #     - file: 'src/pages/home/index.md'
-  #       label: 'Home'
-  #       name: 'home'
-  #       fields:
-  #         - {
-  #             label: 'Template Key',
-  #             name: 'templateKey',
-  #             widget: 'hidden',
-  #             default: 'home-page',
-  #           }
-  #         - { label: 'Title', name: 'title', widget: 'string' }
-  #         - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-  #         - { label: 'Description', name: 'description', widget: 'text' }
-  #         - { label: 'Body', name: 'body', widget: 'markdown' }
-  #         - { label: 'Tags', name: 'tags', widget: 'list' }
+
+  - name: 'home'
+    label: 'Home Page'
+    files:
+      - file: 'src/pages/home/index.md'
+        label: 'Home'
+        name: 'home'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'home',
+            }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+          - { label: 'Description', name: 'description', widget: 'text' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - { label: 'Tags', name: 'tags', widget: 'list' }

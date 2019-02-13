@@ -1,23 +1,60 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
+import React, { Component } from 'react'
+// import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+// import Helmet from "react-helmet"
 import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
+// import SEO from "../components/SEO"
+import SplashPageTemplate from '../templates/splash-page'
+import HomePageTemplate from '../templates/home-page'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <div className="container">
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <Link to="/page-2/">Go to page 2</Link>
-    </div>
-  </Layout>
-)
+export default class IndexPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showSplashPage: false,
+    }
+  }
+  componentDidMount() {}
+  render() {
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
-export default IndexPage
+    return (
+      <React.Fragment>
+        {this.state.showSplashPage === true ? (
+          <SplashPageTemplate />
+        ) : (
+          <Layout>
+            <HomePageTemplate data={posts} />
+          </Layout>
+        )}
+      </React.Fragment>
+    )
+  }
+}
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            description
+            templateKey
+            date(formatString: "MMMM DD, YYYY")
+          }
+        }
+      }
+    }
+  }
+`

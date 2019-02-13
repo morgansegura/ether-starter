@@ -1,5 +1,5 @@
 ---
-templateKey: home-page
+templateKey: home
 seo:
   browserTitle: JS Wakanda
   description: >-
