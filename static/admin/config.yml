@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: morgansegura/catapultarts
+  repo: morgansegura/ether-starter
   branch: master
 publish_mode: editorial_workflow
 media_folder: static/images
@@ -10,7 +10,7 @@ display_url: https://google.com
 
 collections:
   - name: 'post'
-    label: 'Blog'
+    label: 'Post'
     folder: 'src/pages/post'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
@@ -27,57 +27,39 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
 
+  - name: 'page'
+    label: 'Page'
+    folder: 'src/pages/custom'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'page',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
   # Create Theme Pages
-  - name: 'pages'
-    label: 'Pages'
-    files:
-      - file: 'src/pages/home/index.md'
-        label: 'Home'
-        name: 'home'
-        fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'home-page',
-            }
-          - {
-              label: 'SEO & Meta ',
-              name: 'seo',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Browser Tab Title',
-                    name: 'browserTitle',
-                    widget: 'string',
-                  },
-                  {
-                    label: 'Keywords',
-                    name: 'title',
-                    widget: 'string',
-                    hint: 'SEO keywords for the Home Page.',
-                  },
-                  {
-                    label: 'Description',
-                    name: 'description',
-                    widget: 'text',
-                    hint: 'SEO description for the Home Page.',
-                  },
-                  {
-                    label: 'External Scripts',
-                    name: 'meta',
-                    widget: 'list',
-                    hint: 'Scripts will be added before the </body> of your website. For Help: https://catapultarts.com/docs/adding-scripts',
-                    fields:
-                      [
-                        {
-                          label: 'Script',
-                          name: 'src',
-                          widget: 'string',
-                          hint: 'Add only the link to the script. e.g. https://src-to-cdn.com ',
-                        },
-                      ],
-                  },
-                ],
-            }
+  # - name: 'static'
+  #   label: 'Prebuilt Pages'
+  #   files:
+  #     - file: 'src/pages/home/index.md'
+  #       label: 'Home'
+  #       name: 'home'
+  #       fields:
+  #         - {
+  #             label: 'Template Key',
+  #             name: 'templateKey',
+  #             widget: 'hidden',
+  #             default: 'home-page',
+  #           }
+  #         - { label: 'Title', name: 'title', widget: 'string' }
+  #         - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+  #         - { label: 'Description', name: 'description', widget: 'text' }
+  #         - { label: 'Body', name: 'body', widget: 'markdown' }
+  #         - { label: 'Tags', name: 'tags', widget: 'list' }
