@@ -3,8 +3,8 @@ backend:
   repo: morgansegura/ether-starter
   branch: master
 publish_mode: editorial_workflow
-media_folder: ./static/images
-public_folder: images
+media_folder: /static/images
+public_folder: /assets/images
 
 display_url: https://google.com
 
