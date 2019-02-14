@@ -3,8 +3,8 @@ backend:
   repo: morgansegura/ether-starter
   branch: master
 publish_mode: editorial_workflow
-media_folder: /static/images
-public_folder: /assets/images
+media_folder: static/images
+public_folder: src/assets/images
 
 display_url: https://google.com
 
@@ -152,7 +152,7 @@ collections:
             }
           - {
               label: 'Logo',
-              name: 'logoImage',
+              name: 'logo',
               widget: 'object',
               fields:
                 [
@@ -164,39 +164,9 @@ collections:
                   },
                   {
                     label: 'Image Description',
-                    name: 'imageAlt',
+                    name: 'alt',
                     widget: 'string',
                     hint: '(SEO) The Alt tage for this image.',
-                  },
-                  {
-                    label: 'Image Width',
-                    name: 'imageWidth',
-                    widget: 'number',
-                    default: 40,
-                    valueType: 'int',
-                    hint: 'The width of your logo in the header in pixels. Default: 40px',
-                  },
-                  {
-                    label: 'Image Label',
-                    name: 'imageLabel',
-                    widget: 'string',
-                    hint: 'This text will show up if there is no image.',
-                  },
-                  {
-                    label: 'Location Desktop',
-                    name: 'locationDesktop',
-                    widget: 'select',
-                    options: ['left', 'center', 'right'],
-                    default: 'left',
-                    hint: 'Location of the logo in the header (Desktop).',
-                  },
-                  {
-                    label: 'Location Mobile',
-                    name: 'locationMobile',
-                    widget: 'select',
-                    options: ['left', 'center', 'right'],
-                    default: 'center',
-                    hint: 'Location of the logo in the header (Mobile).',
                   },
                 ],
             }

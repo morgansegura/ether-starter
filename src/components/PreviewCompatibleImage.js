@@ -3,21 +3,17 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 // https://www.gatsbyjs.org/packages/gatsby-image/
 const PreviewCompatibleImage = ({ imageInfo }) => {
-
   const { alt = '', childImageSharp, image } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
-    return (
-      <Img fluid={image.childImageSharp.fluid} alt={imageInfo.imageLabel} />
-    )
+    return <Img fluid={image.childImageSharp.fluid} alt={alt} />
   }
 
   if (!!childImageSharp) {
-    return <Img fluid={childImageSharp.fluid} alt={imageInfo.imageLabel} />
+    return <Img fluid={childImageSharp.fluid} alt={alt} />
   }
 
-  if (!!image && typeof image === 'string')
-    return <img src={image} alt={imageInfo.imageLabel} />
+  if (!!image && typeof image === 'string') return <img src={image} alt={alt} />
 
   return null
 }
