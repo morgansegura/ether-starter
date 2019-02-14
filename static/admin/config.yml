@@ -58,25 +58,11 @@ collections:
                   },
                 ],
             }
-          - {
-              label: 'Custom Styles',
-              name: 'css',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'CSS',
-                    name: 'styles',
-                    widget: 'text',
-                    hint: "Here you can add your own custom CSS. This will override default styles but not admin inputs. You don't need <style> tags!",
-                  },
-                ],
-            }
 
-      # Header Settings
-      - file: 'src/pages/settings/header.md'
-        label: 'Header Settings'
-        name: 'settings-header'
+      # Menus
+      - file: 'src/pages/settings/menus.md'
+        label: 'Menu Settings'
+        name: 'settings-menus'
         fields:
           - {
               label: 'Template Key',
@@ -88,12 +74,11 @@ collections:
               label: 'Header Menu',
               name: 'menuHeader',
               widget: 'object',
-              required: false,
               fields:
                 [
                   {
-                    label: 'Menu Items',
-                    name: 'menuItems',
+                    label: 'Main Menu',
+                    name: 'mainMenu',
                     widget: 'list',
                     fields:
                       [
@@ -104,10 +89,37 @@ collections:
                           hint: 'The visible text in this link.',
                         },
                         {
-                          label: 'Link Title',
-                          name: 'linkTitle',
+                          label: 'Link Type',
+                          name: 'linkType',
+                          widget: 'select',
+                          options: ['internal', 'external'],
+                          hint: 'Choose between internal and external.',
+                        },
+                        {
+                          label: 'Link URL',
+                          name: 'linkURL',
                           widget: 'string',
-                          hint: 'The title attribute.',
+                          hint: 'Use a relative URL (e.g. /about) if the link is an internal link. Otherwise, (e.g. https://google.com)',
+                        },
+                      ],
+                  },
+                  {
+                    label: 'Account Menu',
+                    name: 'accountMenu',
+                    widget: 'list',
+                    fields:
+                      [
+                        {
+                          label: 'Icon Class',
+                          name: 'icon',
+                          widget: 'string',
+                          hint: 'Add the appropriate class.',
+                        },
+                        {
+                          label: 'Label',
+                          name: 'label',
+                          widget: 'string',
+                          hint: 'The visible text in this link.',
                         },
                         {
                           label: 'Link Type',
@@ -125,6 +137,18 @@ collections:
                       ],
                   },
                 ],
+            }
+
+      # Header Settings
+      - file: 'src/pages/settings/header.md'
+        label: 'Header Settings'
+        name: 'settings-header'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'settings',
             }
           - {
               label: 'Logo',
@@ -230,86 +254,36 @@ collections:
               default: 'settings',
             }
           - {
-              label: 'Footer Menu',
-              name: 'menuFooter',
-              widget: 'object',
-              fields:
-                [
-                  {
-                    label: 'Menu Items',
-                    name: 'menuItems',
-                    widget: 'list',
-                    fields:
-                      [
-                        {
-                          label: 'Label',
-                          name: 'label',
-                          widget: 'string',
-                          hint: 'The visible text in this link.',
-                        },
-                        {
-                          label: 'Link Title',
-                          name: 'linkTitle',
-                          widget: 'string',
-                          hint: 'The title attribute.',
-                        },
-                        {
-                          label: 'Link Type',
-                          name: 'linkType',
-                          widget: 'select',
-                          options: ['internal', 'external'],
-                          hint: 'Choose between internal and external.',
-                        },
-                        {
-                          label: 'Link URL',
-                          name: 'linkURL',
-                          widget: 'string',
-                          hint: 'Use a relative URL (e.g. /about) if the link is an internal link. Otherwise, (e.g. https://google.com)',
-                        },
-                      ],
-                  },
-                ],
+              label: 'Background Color',
+              name: 'bgColor',
+              widget: 'color',
+              presets: ['red', 'green', 'blue'],
+              default: 'white',
+              hint: 'Adjust the background-color of the <footer> area.',
             }
           - {
-              label: 'Footer',
-              name: 'footer',
-              widget: 'object',
-              required: false,
-              fields:
-                [
-                  {
-                    label: 'Background Color',
-                    name: 'bgColor',
-                    widget: 'color',
-                    presets: ['red', 'green', 'blue'],
-                    default: 'white',
-                    hint: 'Adjust the background-color of the <footer> area.',
-                  },
-                  {
-                    label: 'Text Color',
-                    name: 'textColor',
-                    widget: 'color',
-                    presets: ['red', 'green', 'blue'],
-                    default: 'black',
-                    hint: 'Adjust the font color.',
-                  },
-                  {
-                    label: 'Link Color',
-                    name: 'linkColor',
-                    widget: 'color',
-                    presets: ['red', 'green', 'blue'],
-                    default: 'blue',
-                    hint: 'Adjust the link color.',
-                  },
-                  {
-                    label: 'Link Hover Color',
-                    name: 'linkHoverColor',
-                    widget: 'color',
-                    presets: ['red', 'green', 'blue'],
-                    default: 'teal',
-                    hint: 'Adjust the link color.',
-                  },
-                ],
+              label: 'Text Color',
+              name: 'textColor',
+              widget: 'color',
+              presets: ['red', 'green', 'blue'],
+              default: 'black',
+              hint: 'Adjust the font color.',
+            }
+          - {
+              label: 'Link Color',
+              name: 'linkColor',
+              widget: 'color',
+              presets: ['red', 'green', 'blue'],
+              default: 'blue',
+              hint: 'Adjust the link color.',
+            }
+          - {
+              label: 'Link Hover Color',
+              name: 'linkHoverColor',
+              widget: 'color',
+              presets: ['red', 'green', 'blue'],
+              default: 'teal',
+              hint: 'Adjust the link color.',
             }
 
   - name: 'post'
