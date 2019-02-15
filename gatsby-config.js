@@ -1,4 +1,4 @@
-const { setup } = require('./src/data/setup')
+const { setup } = require('./src/helpers/setup')
 
 module.exports = {
   siteMetadata: {

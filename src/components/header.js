@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { StaticQuery, graphql } from 'gatsby'
 import React from 'react'
+import { scrollHeader } from '../helpers/helpers'
+
+import MenuHeader from './Menus/menuHeader'
 
 const Header = ({ siteTitle }) => (
   <StaticQuery
@@ -30,8 +33,9 @@ const Header = ({ siteTitle }) => (
       }
     `}
     render={data => {
+      scrollHeader()
+      const { title: logoText } = data.site.siteMetadata
       const { logoImage: logo } = data.getLogo.edges[0].node.frontmatter
-      console.log(logo)
       return (
         <>
           <header id="headerMain" className="header unfill">
@@ -40,20 +44,15 @@ const Header = ({ siteTitle }) => (
                 <div className="header__branding col-12 col-md">
                   <Link to="/">
                     {!!logo ? (
-                      <PreviewCompatibleImage imageInfo={logo} />
-                    ) : null}
+                      <div className="header__logo">
+                        <PreviewCompatibleImage imageInfo={logo} />
+                      </div>
+                    ) : (
+                      <h2 className="header__text">{logoText}</h2>
+                    )}
                   </Link>
                 </div>
-
-                <nav id="navHeader" className="nav__header col-12 col-md-10">
-                  <div className="nav__header__inner row">
-                    <div className="" />
-                  </div>
-
-                  <div className="nav__header__trigger">
-                    <div className="nav__header__trigger--inner" />
-                  </div>
-                </nav>
+                <MenuHeader />
               </div>
             </div>
           </header>
