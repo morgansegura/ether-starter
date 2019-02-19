@@ -29,6 +29,22 @@ const MenuHeader = ({ siteTitle }) => (
                     linkURL
                     linkType
                   }
+                }
+              }
+            }
+          }
+        }
+        accountHeaderMenu: allMarkdownRemark(
+          filter: {
+            frontmatter: {
+              menuHeader: { accountMenu: { label: { ne: null } } }
+            }
+          }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                menuHeader {
                   accountMenu {
                     label
                     linkURL
@@ -49,38 +65,24 @@ const MenuHeader = ({ siteTitle }) => (
           <nav id="navHeader" className="nav__header col-12 col-md-10">
             <div className="nav__header__inner row">
               {!!menuMain ? (
-                <div className="nav__primary col-12 col-md-9">
-                  {menuMain.map((item, i) => {
-                    item = item.node.frontmatter.menuHeader.mainMenu
-                    return (
-                      <CustomLink
-                        key={i}
-                        linkType={item.linkType}
-                        linkURL={item.linkURL}
-                        className="hello"
-                      >
-                        {item.label}
-                      </CustomLink>
-                    )
-                  })}
-                </div>
-              ) : null}
-              {!!menuMain ? (
-                <div className="nav__secondary col-12 col-md-3">
-                  {menuMain.map((item, i) => {
-                    item = item.node.frontmatter.menuHeader.mainMenu
-                    return (
-                      <CustomLink
-                        key={i}
-                        linkType={item.linkType}
-                        linkURL={item.linkURL}
-                        className="hello"
-                      >
-                        {item.label}
-                      </CustomLink>
-                    )
-                  })}
-                </div>
+                <>
+                  <div className="nav__primary col-12 col-md-9">
+                    {menuMain.map((item, i) => {
+                      item = item.node.frontmatter.menuHeader.mainMenu
+                      return (
+                        <CustomLink
+                          key={i}
+                          linkType={item.linkType}
+                          linkURL={item.linkURL}
+                          className="hello"
+                        >
+                          {item.label}
+                        </CustomLink>
+                      )
+                    })}
+                  </div>
+                  <div className="nav__secondary col-12 col-md-3" />
+                </>
               ) : null}
             </div>
 

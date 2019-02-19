@@ -110,16 +110,16 @@ collections:
                     fields:
                       [
                         {
-                          label: 'Icon Class',
-                          name: 'icon',
-                          widget: 'string',
-                          hint: 'Add the appropriate class.',
-                        },
-                        {
                           label: 'Label',
                           name: 'label',
                           widget: 'string',
                           hint: 'The visible text in this link.',
+                        },
+                        {
+                          label: 'Icon Class',
+                          name: 'icon',
+                          widget: 'string',
+                          hint: 'Add the appropriate class.',
                         },
                         {
                           label: 'Link Type',
@@ -254,6 +254,103 @@ collections:
               presets: ['red', 'green', 'blue'],
               default: 'teal',
               hint: 'Adjust the link color.',
+            }
+
+  # Account Settings Section
+  - name: 'account'
+    label: 'Account Settings'
+    slug: '{{slug}}'
+    files:
+      # Site Settings (Logo and Menu)
+      - file: 'src/pages/account/index.md'
+        label: 'Account Settings'
+        name: 'account-index'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'account',
+            }
+
+      # Menus
+      - file: 'src/pages/settings/menus.md'
+        label: 'Account Test'
+        name: 'account-menus'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'account',
+            }
+          - {
+              label: 'Header Menu',
+              name: 'menuHeader',
+              widget: 'object',
+              fields:
+                [
+                  {
+                    label: 'Main Menu',
+                    name: 'mainMenu',
+                    widget: 'list',
+                    fields:
+                      [
+                        {
+                          label: 'Label',
+                          name: 'label',
+                          widget: 'string',
+                          hint: 'The visible text in this link.',
+                        },
+                        {
+                          label: 'Link Type',
+                          name: 'linkType',
+                          widget: 'select',
+                          options: ['internal', 'external'],
+                          hint: 'Choose between internal and external.',
+                        },
+                        {
+                          label: 'Link URL',
+                          name: 'linkURL',
+                          widget: 'string',
+                          hint: 'Use a relative URL (e.g. /about) if the link is an internal link. Otherwise, (e.g. https://google.com)',
+                        },
+                      ],
+                  },
+                  {
+                    label: 'Account Menu',
+                    name: 'accountMenu',
+                    widget: 'list',
+                    fields:
+                      [
+                        {
+                          label: 'Label',
+                          name: 'label',
+                          widget: 'string',
+                          hint: 'The visible text in this link.',
+                        },
+                        {
+                          label: 'Icon Class',
+                          name: 'icon',
+                          widget: 'string',
+                          hint: 'Add the appropriate class.',
+                        },
+                        {
+                          label: 'Link Type',
+                          name: 'linkType',
+                          widget: 'select',
+                          options: ['internal', 'external'],
+                          hint: 'Choose between internal and external.',
+                        },
+                        {
+                          label: 'Link URL',
+                          name: 'linkURL',
+                          widget: 'string',
+                          hint: 'Use a relative URL (e.g. /about) if the link is an internal link. Otherwise, (e.g. https://google.com)',
+                        },
+                      ],
+                  },
+                ],
             }
 
   - name: 'post'
