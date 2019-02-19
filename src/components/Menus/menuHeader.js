@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types'
 // import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import { StaticQuery, graphql } from 'gatsby'
-// import CustomLink from './CustomLink'
+import CustomLink from '../CustomLink'
 import React from 'react'
 import { toggleMobileNav } from '../../helpers/helpers'
 
@@ -15,15 +15,25 @@ const MenuHeader = ({ siteTitle }) => (
             title
           }
         }
-        getLogo: allMarkdownRemark(
-          filter: { frontmatter: { logoImage: { image: { ne: null } } } }
+        headerMenu: allMarkdownRemark(
+          filter: {
+            frontmatter: { menuHeader: { mainMenu: { label: { ne: null } } } }
+          }
         ) {
           edges {
             node {
               frontmatter {
-                logoImage {
-                  image
-                  alt
+                menuHeader {
+                  mainMenu {
+                    label
+                    linkURL
+                    linkType
+                  }
+                  accountMenu {
+                    label
+                    linkURL
+                    linkType
+                  }
                 }
               }
             }
@@ -32,13 +42,46 @@ const MenuHeader = ({ siteTitle }) => (
       }
     `}
     render={data => {
-      const { logoImage: logo } = data.getLogo.edges[0].node.frontmatter
+      const menuMain = data.headerMenu.edges
+      console.log(menuMain)
       return (
         <>
           <nav id="navHeader" className="nav__header col-12 col-md-10">
             <div className="nav__header__inner row">
-              <div className="nav__primary col-12 col-md-9" />
-              <div className="nav__primary col-12 col-md-3" />
+              {!!menuMain ? (
+                <div className="nav__primary col-12 col-md-9">
+                  {menuMain.map((item, i) => {
+                    item = item.node.frontmatter.menuHeader.mainMenu
+                    return (
+                      <CustomLink
+                        key={i}
+                        linkType={item.linkType}
+                        linkURL={item.linkURL}
+                        className="hello"
+                      >
+                        {item.label}
+                      </CustomLink>
+                    )
+                  })}
+                </div>
+              ) : null}
+              {!!menuMain ? (
+                <div className="nav__secondary col-12 col-md-3">
+                  {menuMain.map((item, i) => {
+                    item = item.node.frontmatter.menuHeader.mainMenu
+                    return (
+                      <CustomLink
+                        key={i}
+                        linkType={item.linkType}
+                        linkURL={item.linkURL}
+                        className="hello"
+                      >
+                        {item.label}
+                      </CustomLink>
+                    )
+                  })}
+                </div>
+              ) : null}
             </div>
 
             <div className="nav__header__trigger" onClick={toggleMobileNav}>
