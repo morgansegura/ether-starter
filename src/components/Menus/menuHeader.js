@@ -49,7 +49,7 @@ const MenuHeader = ({ siteTitle }) => (
                     label
                     linkURL
                     linkType
-                    icon_class
+                    iconClass
                   }
                 }
               }
@@ -124,20 +124,3 @@ MenuHeader.defaultProps = {
 }
 
 export default MenuHeader
-
-
-<script>
-  var valueInCents = {{ihAmount}}* 100 
-  console.log('revenu: ' + datalayer.ihAmount * 100)
-   window["optimizely"] = window["optimizely"] || [];
-
-   window["optimizely"].push({
-     "type": "event",
-     "eventName": "trackRevenue",
-     "tags": {
-       "revenue": valueInCents,
-		"value":  {{ihAmount}},
-        "confirmID": {{ihAmount}}
-	}
-   });
-</script>
