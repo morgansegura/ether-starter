@@ -17,7 +17,9 @@ const MenuHeader = ({ siteTitle }) => (
         }
         headerMenu: allMarkdownRemark(
           filter: {
-            frontmatter: { menuHeader: { mainMenu: { label: { ne: null } } } }
+            frontmatter: {
+              menuHeader: { mainMenu: { uniqueID: { ne: null } } }
+            }
           }
         ) {
           edges {
@@ -37,7 +39,7 @@ const MenuHeader = ({ siteTitle }) => (
         accountHeaderMenu: allMarkdownRemark(
           filter: {
             frontmatter: {
-              menuHeader: { accountMenu: { label: { ne: null } } }
+              menuHeader: { accountMenu: { uniqueID: { ne: null } } }
             }
           }
         ) {
