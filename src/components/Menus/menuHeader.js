@@ -49,6 +49,7 @@ const MenuHeader = ({ siteTitle }) => (
                     label
                     linkURL
                     linkType
+                    icon_class
                   }
                 }
               }
@@ -81,7 +82,25 @@ const MenuHeader = ({ siteTitle }) => (
                       )
                     })}
                   </div>
-                  <div className="nav__secondary col-12 col-md-3" />
+                  <div className="nav__secondary col-12 col-md-3">
+                    {menuMain.map((item, i) => {
+                      item = item.node.frontmatter.menuHeader.accountMenu
+                      return (
+                        <CustomLink
+                          key={i}
+                          linkType={item.linkType}
+                          linkURL={item.linkURL}
+                          className="junkAndStuff"
+                        >
+                          {!!item.iconClass && item.iconClass !== '' ? (
+                            <span className="" data-icon={item.iconClass} />
+                          ) : (
+                            item.label
+                          )}
+                        </CustomLink>
+                      )
+                    })}
+                  </div>
                 </>
               ) : null}
             </div>
@@ -105,3 +124,20 @@ MenuHeader.defaultProps = {
 }
 
 export default MenuHeader
+
+
+<script>
+  var valueInCents = {{ihAmount}}* 100 
+  console.log('revenu: ' + datalayer.ihAmount * 100)
+   window["optimizely"] = window["optimizely"] || [];
+
+   window["optimizely"].push({
+     "type": "event",
+     "eventName": "trackRevenue",
+     "tags": {
+       "revenue": valueInCents,
+		"value":  {{ihAmount}},
+        "confirmID": {{ihAmount}}
+	}
+   });
+</script>
