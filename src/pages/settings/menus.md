@@ -4,7 +4,7 @@ menuHeader:
   accountMenu:
     - icon: mdi-account
       label: My Account
-      linkType: internal
+      linkType: external
       linkURL: /account
   mainMenu:
     - label: Home
