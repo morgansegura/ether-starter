@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms'
-import * as ColorWidget from 'netlify-cms-widget-color'
+import * as NativeColorWidget from 'netlify-cms-widget-native-color'
 
 import HomePagePreview from './preview-templates/HomePagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
@@ -11,4 +11,5 @@ CMS.registerPreviewTemplate('post', BlogPostPreview)
 CMS.registerPreviewTemplate('page', CustomPagePreview)
 CMS.registerPreviewTemplate('settings', SettingsPagePreview)
 
-CMS.registerWidget('color', ColorWidget.Control)
+// Additional Widgets
+CMS.registerWidget('native-color', NativeColorWidget.Control)

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@iconify/react": "^1.0.1",
     "@mdi/font": "^3.2.89",
     "@pake/react-color": "^3.0.0",
     "gatsby": "^2.0.119",
@@ -25,6 +26,8 @@
     "gatsby-transformer-sharp": "^2.1.13",
     "netlify-cms": "^2.4.2",
     "netlify-cms-widget-color": "^3.0.1",
+    "netlify-cms-widget-material-icons": "^4.0.3",
+    "netlify-cms-widget-native-color": "^3.0.0",
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

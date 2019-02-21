@@ -1,8 +1,7 @@
-import { Link } from 'gatsby'
+import React from 'react'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import { StaticQuery, graphql } from 'gatsby'
-import React from 'react'
 import { scrollHeader } from '../helpers/helpers'
 
 import MenuHeader from './Menus/menuHeader'

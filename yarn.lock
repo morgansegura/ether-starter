@@ -796,6 +796,25 @@
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.8.2.tgz#576ff7fb1230185b619a75d258cbc98f0867a8dc"
   integrity sha512-rLu3wcBWH4P5q1CGoSSH/i9hrXs7SlbRLkoq9IGuoPYNGQvDJ3pt/wmOM+XgYjIDRMVIdkUWt0RsfzF50JfnCw==
 
+"@iconify/json-tools@^1.0.4":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@iconify/json-tools/-/json-tools-1.0.5.tgz#68a8baed8def2ea3c66c313da46ab931a6db796e"
+  integrity sha512-CfgaLFnd+fuXg2zcxI2/LZpFZHcPUl8BmNNzeP2usLw+Z+JPDwibt8H41pJ86dy8ADMONsTBeTpkFXLh+n9Gsw==
+
+"@iconify/json@^1.0.60":
+  version "1.0.64"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-1.0.64.tgz#b22adad2120517a6c11f62f582b2ee8e4ec3d5fe"
+  integrity sha512-pQQU2F+pT7cV9LzhfGpHerVrM/8H2UTNlqRwKoke4oQip9Wmba3TWEd/VnjiNaMKhxdaLlxNSaCeD3H+o0LadA==
+
+"@iconify/react@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.0.1.tgz#06612a0212716e9a04b46ca7da1cdaafb511d79a"
+  integrity sha512-hUJYG8UqHbL5DYa8KIedHdxfVCBrpUdkfnbMkLeStcG+OGYDf47Gzj8bYHn8bLcvHKnsslkp7wA/xuzWnTuyHg==
+  dependencies:
+    "@iconify/json" "^1.0.60"
+    "@iconify/json-tools" "^1.0.4"
+    react "^16.8.1"
+
 "@icons/material@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
@@ -830,6 +849,13 @@
     prop-types "^15.5.10"
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
+
+"@pake/react-list@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pake/react-list/-/react-list-1.0.0.tgz#5b549c3cf4d7d839e915bd8dd19914e536b636ed"
+  integrity sha512-SUbw/ttOmAgUet5+62KnX5QkNgVWoFNmD46L1cngF/za/Xz9x0rO953ILJcM3SguoycX7Kcbp8i9n8jLm+Legw==
+  dependencies:
+    prop-types "15"
 
 "@reach/router@^1.1.1":
   version "1.2.1"
@@ -4508,6 +4534,11 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
   integrity sha1-De4/7TH81GlhjOc0IJn8GvoL2xM=
+
+estree-walker@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.6.0.tgz#5d865327c44a618dde5699f763891ae31f257dae"
+  integrity sha512-peq1RfVAVzr3PU/jL31RaOjUKLoZJpObQWJJ+LgfcxDUifyLZ1RjPQZTl0pzj2uJ45b7A7XpyppXvxdEqzo4rw==
 
 esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
@@ -8430,6 +8461,11 @@ material-colors@^1.2.1:
   resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
   integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
 
+material-design-icon-list@^3.0.3:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/material-design-icon-list/-/material-design-icon-list-3.2.0.tgz#6807c4b362966292ef514e9dd910397bd4907ca8"
+  integrity sha512-hjQ0mG1oUSepPfSyhb4GoNGsuqyJ5V+qa6alMjU4ATjZfrYsf/HIj73XBFKNTFYR6ceZrLljCuaLQ9HxwVOO0g==
+
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -9163,6 +9199,20 @@ netlify-cms-widget-markdown@^2.1.1:
     unified "^6.1.4"
     unist-builder "^1.0.2"
     unist-util-visit-parents "^1.1.1"
+
+netlify-cms-widget-material-icons@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-material-icons/-/netlify-cms-widget-material-icons-4.0.3.tgz#475e814826b83ac5e1ad3ca72726a65eea046c2e"
+  integrity sha512-fcfh+3M1qjnaS7oP6tI9aSap6SSnrC6UeM54heox1DyYKUBuJFbdY5h2lDg/5FBXRJbLrCiPuyR01R3JdznnaQ==
+  dependencies:
+    "@pake/react-list" "^1.0.0"
+    material-design-icon-list "^3.0.3"
+    rollup-plugin-json "^3.0.0"
+
+netlify-cms-widget-native-color@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-native-color/-/netlify-cms-widget-native-color-3.0.0.tgz#c43b02a463502c528c676d3de2b265e33a345fb4"
+  integrity sha512-sn3+bdSq+i/wFqmoWt8FFu+cs91Bv5+71Ind8jyBk71CIx3qMKGfD+69Fs5cmNHOjU/NfWW8FtpDZZREW5KZtw==
 
 netlify-cms-widget-number@^2.1.1:
   version "2.1.1"
@@ -11387,6 +11437,15 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+prop-types@15:
+  version "15.7.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.8.1"
+
 prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.1:
   version "15.7.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.1.tgz#2fa61e0a699d428b40320127733ee2931f05d9d1"
@@ -12708,6 +12767,21 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rollup-plugin-json@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-json/-/rollup-plugin-json-3.1.0.tgz#7c1daf60c46bc21021ea016bd00863561a03321b"
+  integrity sha512-BlYk5VspvGpjz7lAwArVzBXR60JK+4EKtPkCHouAWg39obk9S61hZYJDBfMK+oitPdoe11i69TlxKlMQNFC/Uw==
+  dependencies:
+    rollup-pluginutils "^2.3.1"
+
+rollup-pluginutils@^2.3.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.4.1.tgz#de43ab54965bbf47843599a7f3adceb723de38db"
+  integrity sha512-wesMQ9/172IJDIW/lYWm0vW0LiKe5Ekjws481R7z9WTRtmO59cqyM/2uUlxvf6yzm/fElFmHUobeQOYz46dZJw==
+  dependencies:
+    estree-walker "^0.6.0"
+    micromatch "^3.1.10"
 
 run-async@^2.2.0:
   version "2.3.0"

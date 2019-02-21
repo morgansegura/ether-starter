@@ -49,7 +49,7 @@ const MenuHeader = ({ siteTitle }) => (
                     label
                     linkURL
                     linkType
-                    iconClass
+                    icon
                   }
                 }
               }
@@ -60,7 +60,8 @@ const MenuHeader = ({ siteTitle }) => (
     `}
     render={data => {
       const menuMain = data.headerMenu.edges
-      console.log(menuMain)
+      const menuAccount = data.accountHeaderMenu.edges
+      //   console.log(menuMain)
       return (
         <>
           <nav id="navHeader" className="nav__header col-12 col-md-10">
@@ -75,7 +76,7 @@ const MenuHeader = ({ siteTitle }) => (
                           key={i}
                           linkType={item.linkType}
                           linkURL={item.linkURL}
-                          className="hello"
+                          className="nav__item"
                         >
                           {item.label}
                         </CustomLink>
@@ -83,17 +84,17 @@ const MenuHeader = ({ siteTitle }) => (
                     })}
                   </div>
                   <div className="nav__secondary col-12 col-md-3">
-                    {menuMain.map((item, i) => {
+                    {menuAccount.map((item, i) => {
                       item = item.node.frontmatter.menuHeader.accountMenu
                       return (
                         <CustomLink
                           key={i}
                           linkType={item.linkType}
                           linkURL={item.linkURL}
-                          className="junkAndStuff"
+                          className="nav__item"
                         >
-                          {!!item.iconClass && item.iconClass !== '' ? (
-                            <span className="" data-icon={item.iconClass} />
+                          {!!item.icon && item.icon !== '' ? (
+                            <span className="iconify" data-icon={item.icon} />
                           ) : (
                             item.label
                           )}

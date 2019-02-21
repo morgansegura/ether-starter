@@ -77,7 +77,7 @@ collections:
               fields:
                 [
                   {
-                    label: 'Main Menu',
+                    label: 'Main Menu Item',
                     name: 'mainMenu',
                     widget: 'list',
                     fields:
@@ -87,6 +87,12 @@ collections:
                           name: 'label',
                           widget: 'string',
                           hint: 'The visible text in this link.',
+                        },
+                        {
+                          label: 'Unique ID',
+                          name: 'uniqueID',
+                          widget: 'string',
+                          hint: 'Add a unique ID. e.g. homeLink',
                         },
                         {
                           label: 'Link Type',
@@ -104,11 +110,10 @@ collections:
                       ],
                   },
                   {
-                    label: 'Account Menu',
+                    label: 'Account Menu Item',
                     name: 'accountMenu',
                     widget: 'list',
-                    fields:
-                      [
+                    fields: [
                         {
                           label: 'Label',
                           name: 'label',
@@ -116,10 +121,23 @@ collections:
                           hint: 'The visible text in this link.',
                         },
                         {
-                          label: 'Icon Class',
+                          label: 'Unique ID',
+                          name: 'uniqueID',
+                          widget: 'string',
+                          hint: 'Add a unique ID. e.g. searchLink',
+                        },
+                        # {
+                        #   label: 'Color Picker',
+                        #   name: 'native-color',
+                        #   widget: 'native-color',
+                        #   hint: 'Testing native color widget.',
+                        #   required: false,
+                        # },
+                        {
+                          label: 'Icon',
                           name: 'icon',
                           widget: 'string',
-                          hint: 'Add the appropriate class.',
+                          hint: 'Icon list: https://cdn.materialdesignicons.com/3.4.93/',
                         },
                         {
                           label: 'Link Type',
